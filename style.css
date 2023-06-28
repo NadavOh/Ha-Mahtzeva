@@ -224,12 +224,13 @@ body {
 .container__asterisk {
   overflow: hidden;
   position: relative;
-  margin-bottom: -20vw;
+  overflow: hidden;
+  height: 30vw;
 }
 
 .animation-asterisk {
   display: inline-block;
-  font-size: 40vw;
+  font-size: 50vw;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -263,18 +264,28 @@ body {
   margin: 0 auto;
   margin-top: 5vw;
   margin-bottom: 5vw;
+  z-index: 1;
 }
 
 .cell {
   width: 10vw;
   height: 10vw;
   font-size: 16vw;
-  line-height: 16vh;
   text-align: center;
   padding: 4rem;
   transition: 0.75s ease-in-out;
-  vertical-align: middle;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1000px) {
+  .cell {
+    width: 3vw;
+    height: 3vw;
+    font-size: 12vw;
+    padding: 2rem;
+  }
 }
 
 .cell-1 {
@@ -811,6 +822,7 @@ section .group .row span {
 @media (max-width: 1000px) {
   .credit__container {
     flex-direction: column;
+    width: 100%;
   }
 }
 
@@ -823,6 +835,12 @@ section .group .row span {
   height: auto;
 }
 
+@media (max-width: 1000px) {
+  .credit__container_bezalel {
+  width: 35vw;
+  }
+}
+
 .p-creditscntr {
   font-size: 2.15vw;
   font-variation-settings: "XXXX" 0, "YYYY" 0;
@@ -830,7 +848,6 @@ section .group .row span {
   overflow-wrap: break-word;
   text-align: rtl;
   width: 35vw;
-  margin: 0%;
   margin-top: auto;
 }
 
