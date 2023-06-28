@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Ha-Mahtzeva</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <link rel="icon" href="Mem --white.svg">
+  </head>
+  <body>
+  <div class="black__background">
+    <div id="scroll-container">
+      <div id="headline" class="headline">המחצבה</div>
+    </div>
+
+    <div class="info__container">
+      <p class="p-info">
+        המחצבה <span class="p-info-inline">והמחצבה חלול</span> משפחת גופנים עבריים דינמיים. גופנים אלו עוצבו בהשראת אותיות האבן החצובות באנדרטת ״מצודת כח״ שתוכננו במקור ע״י זוג האדריכלים ביטוש קומפורטי ואיקה קומפורטי-עובדיה בשנת 1957. אותיות אלו במבנה סנס סרפי גיאומטרי וחד עם נינוח מקומי ונוסטלגי.
+      </p>
+    </div>
+
+    <div class="Otiot__container">
+      <p class="otiot">
+        אבגדהוזח<br>טיכלמנסע<br>פצקרשת<br>ךםןףץ
+      </p>
+      <p class="toggleFont">
+        <input id="toggle" class="toggle" type="checkbox" role="switch" name="toggle" value="on" onclick="toggleFont()">
+        <label class="slot">
+          <span class="slot__label">רגיל</span>
+          <span class="slot__label">חלול</span>
+        </label>
+      </p>
+    </div>
+
+    <div class="info__container">
+      <p class="p-info">
+        מאז ומעולם הושפע עיצוב האותיות מהכלים והטכנולוגיות בהם השתמשו באותה תקופה לכתוב. נוצה, דפוס בלט, סיתות וחציבה, וכן הלאה.
+        עיצוב אותיות הגופן נובע מתוך התנועה המתאפשרת ע״י הטכנולוגיה של הגופנים הדינימיים, המאפשרים לנו ליצור משקלי ביניים וככה להנפיש את האותיות.
+        הכיתוב באנדרטה; וכך גם אותיות ה׳מחצבה׳ הן
+        <span class="info-three-d" data-splitting>תלת־מימדיות.</span> <br>
+         בתנועה הן חושפות את שלד האות. הגופן נשען על מערכת הצירים הקרטזית, זוויות האות נעות על ציר <span class="p-info-eng">Y</span> וציר <span class="p-info-eng">X</span> בין 45 מעלות ל 45- מעלות.
+      </p>
+    </div>
+      
+
+    <div class="container__asterisk">
+    <span class="animation-asterisk">*</span>
+    </div>
+
+    <div class="container__alef">
+      <div class="cell cell-1">א</div>
+      <div class="cell cell-2">א</div>
+      <div class="cell cell-3">א</div>
+      <div class="cell cell-4">א</div>
+      <div class="cell cell-5">א</div>
+      <div class="cell cell-6">א</div>
+      <div class="cell cell-7">א</div>
+      <div class="cell cell-8">א</div>
+      <div class="cell cell-9">א</div> 
+    </div>
+
+    <!-- <section>
+      <div class="group">
+        <div class="row">
+          <span>א</span><span>ב</span><span>ג</span><span>ד</span><span>ה</span><span>ו</span><span>ז</span><span>ח</span><span>ט</span><span>י</span><span>כ</span>
+          <span>ל</span><span>מ</span><span>נ</span><span>ס</span><span>ע</span><span>פ</span><span>צ</span><span>ק</span><span>ר</span><span>ש</span><span>ת</span>
+        </div>
+      </div>
+    </section> -->
+    
+    <!-- <video width="100%" autoplay loop muted>
+      <source src="Strip.mp4" type="video/mp4" />
+    </video> -->
+
+    <div id="transform__container">
+      <div id="title"><span>ע</span></div>
+      <span class="label label--top">Y45</span>
+      <span class="label label--bottom">Y-45</span>
+      <span class="label label--left">X-45</span>
+      <span class="label label--right">X45</span>
+    </div>
+
+    <div id="transform__digits__container">
+      <transform__digits class="axis-position" id="axis-y-position">Y0</transform__digits>
+      </br>
+      <transform__digits class="axis-position" id="axis-x-position">X0</transform__digits>
+    </div>
+
+
+    <div class="Nadned">
+      <div class= "animation2">
+        <span class="right">וזה לא כזה עמוק,</span> 
+        <span class="left">לא לא לא</span> <br>
+      </div>  
+    </div>
+
+    <div class="hovering__container">
+      <nav>
+        <ul>
+            <a href="#home" data-splitting>
+              תפיסת עומק או ראיית עומק, היא היכולת לראות את<br>
+              הנפח התלת־ממדי של עצמים, את הפריסה שלהם במרחב<br>
+              ואת המיקום שלהם ביחס לצופה ולעצמים אחרים.<br>
+              היא מתאפשרת בעקבות מנגנון העיבוד של מערכת<br>
+              הראייה במוח, אשר יכול להפוך את התמונה הדו־ממדית<br>
+              המתקבלת על הרשתית לתמונה תלת־ממדית.
+            </a>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Slider -->
+
+    <div class="slidecontainer">
+      <div class="slider-label__text slider__label">Y</div>
+      <input type="range" min="-45" max="45" value="0" class="slider" id="slider-YYYY">
+      <div class="slider-label__value slider__label" id="slider-YYYY__value"></div>
+    </div>
+    
+    <div class="slidecontainer">
+      <div class="slider-label__text slider__label">X</div>
+      <input type="range" min="-45" max="45" value="0" class="slider" id="slider-XXXX">
+      <div class="slider-label__value slider__label" id="slider-XXXX__value"></div>
+    </div>
+    
+    <!-- Text -->
+    <div id="text-container">
+      <input id="input-text__id" class="input__text" placeholder="פה מקלידים" maxlength="20"></input>
+    </div>
+
+    <div id="Table-hover__container">
+      <div id="content-container">
+        <div id="content"></div>
+      </div>
+
+      <div class="table-container">
+        <table dir="rtl" class="font-default">
+          <tbody>
+            <tr>
+              <td>א</td><td>ב</td><td>ג</td><td>ד</td><td>ה</td><td>ו</td><td>ז</td><td>ח</td><td>ט</td>
+            </tr>
+            <tr>
+              <td>י</td><td>כ</td><td>ך</td><td>ל</td><td>מ</td><td>ם</td><td>נ</td><td>ן</td><td>ס</td>
+            </tr>
+            <tr>
+              <td>ע</td><td>פ</td><td>ף</td><td>צ</td><td>ץ</td><td>ק</td><td>ר</td><td>ש</td><td>ת</td>
+            </tr>
+            <tr>
+              <td>₪</td><td>?</td><td>!</td><td>״</td><td>׳</td><td>/</td><td>)</td><td>(</td><td>*</td>
+            </tr>
+            <tr>
+              <td>.</td><td>,</td><td>:</td><td>;</td><td>־</td><td>-</td><td>–</td><td>_</td><td>0</td>
+            </tr>
+            <tr>
+              <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="toggleFont">
+        <input id="toggle" class="toggle" type="checkbox" role="switch" name="toggle" value="on" onclick="toggleTableFont()">
+        <label class="slot">
+          <span class="slot__label">רגיל</span>
+          <span class="slot__label">חלול</span>
+        </label>
+      </p>
+    </div>
+  </div>
+
+
+  <div class="white__backgroundend">
+
+    <div class="credit__container">
+
+      <p class="p-creditscntr">
+        <span class="credits_h" data-splitting>גופן ׳המחצבה׳</span>
+        <br><br>
+        מעצב <span class="credits_slnt">נדב אהד</span>
+        <br>
+        מנחה <span class="credits_slnt">מאיר סדן</span>
+        <br><br>
+       <!-- תודה רבה ל<span class="credits_slnt">אור אזולאי</span> על תמיכה מנטלית ועצות עיצוביות לאורך כל הדרך, -->
+        תודה מיוחדת ל<span class="credits_slnt">איתן נכט</span> המדהים על סיוע בבניית הקוד,
+         תודה לחברת <span class="credits_slnt">׳סטרטסיס׳</span> על הדפסת תלת־מימד מדהימה של האותיות
+       </p>
+
+       <div class="credit__container_bezalel">
+      
+        <img id="bezalel_logo" src="LOGO_final-01.jpg"></img>
+
+        <p class="p-creditscntr">
+          <br>
+        הגופן עוצב במסגרת פרוייקט הגמר לתואר ראשון, <span class="credits_slnt">במחלקה לתקשורת חזותית</span> בצלאל, אקדמיה לאומנות ועיצוב, ירושלים 2023
+        </p>
+
+     </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="./script.js"></script>
+
+  </body>
+</html>
