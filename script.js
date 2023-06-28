@@ -6,11 +6,9 @@
 
 Splitting();
 
-
 // scroll start
 const headline = document.getElementById("headline");
 const scrollSpeed = 10; // Adjust this value to change the scroll speed
-const yPositionOffset = 4550; // Adjust this value to change the Y position offset
 
 window.addEventListener("scroll", function () {
   const scrollPosition = window.scrollY;
@@ -20,16 +18,13 @@ window.addEventListener("scroll", function () {
 
   // Calculate the current font variation setting based on scroll position
   const variationValue =
-    ((scrollPosition * scrollSpeed) / totalScrollableHeight) * variationRange +
+    ((scrollPosition * scrollSpeed) / totalScrollableHeight) *
+    variationRange +
     variationStart;
-
-  // Calculate the current Y position offset based on scroll position
-  const yPosition = (scrollPosition / totalScrollableHeight) * yPositionOffset;
 
   headline.style["font-variation-settings"] = `'YYYY' ${variationValue.toFixed(
     2
   )}`;
-  headline.style.transform = `translateY(${yPosition}px)`;
 });
 // scroll end
 
