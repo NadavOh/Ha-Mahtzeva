@@ -71,6 +71,12 @@ body {
   margin-right: 15%;
 }
 
+@media (max-width: 1000px) {
+  .Otiot__container {
+    flex-direction: column;
+  }
+}
+
 .otiot {
   font-size: 7vw;
   line-height: 5vw;
@@ -84,79 +90,72 @@ body {
 
 @media (max-width: 1000px) {
   .otiot {
-  font-size: 11vw;
-  line-height: 9vw;
+  font-size: 13vw;
+  line-height: 10.5vw;
+  margin-bottom: 5vw;
   }
 }
 
-.toggleFont {
-  align-items: center;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.toggle, .toggle:before, .slot__label {
-	transition-property: background-color, transform, visibility;
-	transition-duration: 0.30s;
-	transition-timing-function: ease-in, cubic-bezier(0.6,0.2,0.4,1.5), linear;
-}
-.toggle:before, .slot, .slot__label {
-	display: block;
-}
-.toggle:before, .curtain {
-	position: absolute;
+
+input[type="checkbox"] {
+  display: none;
 }
 
-.toggle:focus {
-	outline: transparent;
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 5vw;
+  height: 2.5vw;
+  background: var(--white);
+  display: block;
+  border-radius: 5vw;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
 }
-.toggle {
-	border-radius: 0.75em;
-	box-shadow: 0 0 0 0.1em inset;
-	cursor: pointer;
-	position: relative;
-	width: 3em;
-	height: 1.5em;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	-webkit-tap-highlight-color: transparent;
-	color: var(--white);
-  font-size: clamp(1rem, 1vw, 3rem);}
-.toggle:before {
-	background: currentColor;
-	border-radius: 50%;
-	content: "";
-	top: 0.2em;
-	left: 0.2em;
-	width: 1.1em;
-	height: 1.1em;
+
+@media (max-width: 1000px) {
+  label {
+    width: 20vw;
+    height: 10vw;
+    border-radius: 20vw;
+    margin-bottom: 5vw;
+  }
 }
-.toggle:checked:before {
-	transform: translateX(1.5em);
+
+label:after {
+  content: "";
+  position: absolute;
+  top: 0.15vw;
+  left: 0.125vw;
+  width: 2.25vw;
+  height: 2.25vw;
+  background: var(--black);
+  border-radius: 2.25vw;
+  transition: transform 0.3s ease-in-out;
+  border: 0.125vw solid var(--black);
+  box-sizing: border-box;
 }
-.toggle:checked ~ .slot .slot__label, .slot__label:nth-child(2) {
-	transform: translateY(-50%) scaleY(0);
+
+@media (max-width: 1000px) {
+  label:after {
+    top: 0.6vw;
+    left: 0.5vw;
+    width: 9vw;
+    height: 9vw;
+    border-radius: 9vw;
+    border: 0.5vw solid var(--black);
+  }
 }
-.toggle:checked ~ .slot .slot__label:nth-child(2) {
-	transform: translateY(-100%) scaleY(1);
+
+input:checked + label:after {
+  transform: translateX(2.50vw);
+  background-color: transparent;
 }
-.toggle:checked ~ .curtain {
-	transform: scaleX(1);
-}
-.slot {
-  font-size: clamp(2rem, 2.4vw, 4rem);
-	line-height: 1;
-	overflow: hidden;
-	height: 1em;
-  color: var(--white);
-}
-.slot__label {
-	transform-origin: 0;
-}
-.slot__label:nth-child(2) {
-	transform-origin: 50% 100%;
-  font-family: 'Ha-MahtzevaInlineVF';
+
+@media (max-width: 1000px) {
+  input:checked + label:after {
+    transform: translateX(10vw);
+  }
 }
 /* Otiot end */
 
@@ -229,6 +228,8 @@ body {
   }
 }
 /* p-info end */
+
+
 
 /* animation-asterisk start */
 .container__asterisk {
@@ -448,7 +449,7 @@ body {
   display: block;
 }
 
-.label {
+.label-t {
   position: absolute;
   margin: 0;
   font-size: 13.5pt;
@@ -463,35 +464,35 @@ body {
   z-index: 2;
 }
 
-.label--left,
-.label--right {
+.label-t--left,
+.label-t--right {
   top: 50%;
   transform: translateY(-50%);
 }
 
-.label--top,
-.label--bottom {
+.label-t--top,
+.label-t--bottom {
   left: 50%;
   transform: translateX(-50%);
 }
 
-.label--left {
+.label-t--left {
   left: 1rem;
   transform-origin: left center;
   transform: rotate(-90deg) translate(-50%, 50%);
 }
 
-.label--right {
+.label-t--right {
   right: 1rem;
   transform-origin: right center;
   transform: rotate(90deg) translate(50%, 50%);
 }
 
-.label--top {
+.label-t--top {
   top: 1rem;
 }
 
-.label--bottom {
+.label-t--bottom {
   bottom: 1rem;
 }
 /* Transform Container End */
@@ -586,7 +587,7 @@ a > span {
 .slidecontainer {
   margin: auto;
   padding: 10px;
-  width: 35%;
+  width: 40vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -601,7 +602,7 @@ a > span {
 
 .slider {
   -webkit-appearance: none;
-  width: 60vw;
+  width: 30vw;
   height: 3px;
   background: var(--white);
   outline: none;
