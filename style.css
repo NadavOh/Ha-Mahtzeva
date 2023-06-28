@@ -25,7 +25,6 @@ body {
 .white__background {
   background-color: var(--white);
   color: var(--black);
-  padding: 0%;
   padding-top: 300pt;
   padding-bottom: 300pt;
 }
@@ -49,8 +48,8 @@ body {
 }
 
 .headline {
-  font-size: 12vw;
-  font-variation-settings: "YYYY" -20;
+  font-size: clamp(4.5rem, 12vw, 14rem);
+  font-variation-settings: "YYYY" 0;
   position: sticky;
   top: 40%;
   transform: translateY(-5%);
@@ -73,13 +72,21 @@ body {
 }
 
 .otiot {
-  font-size: 6vw;
-  line-height: 4.4vw;
+  font-size: 7vw;
+  line-height: 5vw;
   font-variation-settings: "XXXX" 0, "YYYY" 0;
   text-align: rtl;
   letter-spacing: 0.2vw;
   font-family: "Ha-MahtzevaVF", sans-serif;
   margin-left: 5%;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 1000px) {
+  .otiot {
+  font-size: 11vw;
+  line-height: 9vw;
+  }
 }
 
 .toggleFont {
@@ -167,9 +174,8 @@ body {
 
 .p-info {
   margin: 0;
-  font-size: clamp(1.5rem, 3vw, 4rem);
-  font-variation-settings: "XXXX" 0, "YYYY" 0;
-  line-height: clamp(1.4rem, 2.8vw, 3.6rem);
+  font-size: clamp(1.7rem, 2.15vw, 4rem);
+  line-height: clamp(1.5rem, 2vw, 3.8rem);
   overflow-wrap: break-word;
 }
 
@@ -181,9 +187,8 @@ body {
 
 .p-info-inline {
   margin: 0;
-  font-size: clamp(1.5rem, 3vw, 4rem);
-  font-variation-settings: "XXXX" 0, "YYYY" 0;
-  line-height: clamp(1.4rem, 2.8vw, 3.6rem);
+  font-size: clamp(1.7rem, 2.15vw, 4rem);
+  line-height: clamp(1.5rem, 2vw, 3.8rem);
   overflow-wrap: break-word;
   font-family: "Ha-MahtzevaInlineVF";
 }
@@ -192,15 +197,15 @@ body {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   margin: 0;
-  font-size: clamp(1.5rem, 3vw, 4rem);
-  line-height: clamp(1.4rem, 2.8vw, 3.6rem);
+  font-size: clamp(1.7rem, 2.15vw, 4rem);
+  line-height: clamp(1.5rem, 2vw, 3.8rem);
   overflow-wrap: break-word;
 }
 
 .info-three-d {
   margin: 0;
-  font-size: clamp(1.5rem, 3vw, 4rem);
-  line-height: clamp(1.4rem, 2.8vw, 3.6rem);
+  font-size: clamp(1.7rem, 2.15vw, 4rem);
+  line-height: clamp(1.5rem, 2vw, 3.8rem);
   overflow-wrap: break-word;
 }
 
@@ -230,12 +235,12 @@ body {
   overflow: hidden;
   position: relative;
   overflow: hidden;
-  height: 30vw;
+  height: 45vw;
 }
 
 .animation-asterisk {
   display: inline-block;
-  font-size: 50vw;
+  font-size: 70vw;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -274,6 +279,13 @@ body {
   margin-bottom: 15vw;
 }
 
+@media (max-width: 1000px) {
+  .container__alef {
+    width: 80vw;
+    height: 80vw;
+  }
+}
+
 .cell {
   width: 10vw;
   height: 10vw;
@@ -288,9 +300,10 @@ body {
 
 @media (max-width: 1000px) {
   .cell {
-    width: 5vw;
-    height: 5vw;
+    width: 10vw;
+    height: 10vw;
     padding: 2rem;
+    font-size: 22vw;
   }
 }
 
@@ -491,12 +504,17 @@ body {
 }
 
 .animation2 {
-  font-weight: 100;
   font-size: 6vw;
   align-items: center;
   justify-content: center;
   text-align: center;
   margin-top: 10vw;
+}
+
+@media (max-width: 1000px) {
+  .animation2 {
+    font-size: 9vw;
+  }
 }
 
 .right {
@@ -536,6 +554,34 @@ body {
 }
 /* Animation nadned End*/
 
+/* hover animation*/
+.hovering__container {
+  background-color: transparent;
+  align-items: center;
+  margin-left: auto;
+  margin-bottom: 15vw;
+  text-align: center;
+  padding: 0% !important;
+}
+
+a {
+  font-family: "Ha-MahtzevaVF";
+  color: var(--white);
+  font-size: clamp(1.8rem, 3.5vw, 4rem);
+  line-height: clamp(1.5rem, 2.8vw, 3.8rem);
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 500ms ease-in-out;
+  align-items: center;
+  direction: rtl;
+  cursor: default;
+}
+
+a > span {
+  cursor: none;
+}
+/* hover animation END*/
+
 /* Silder Start*/
 .slidecontainer {
   margin: auto;
@@ -545,6 +591,12 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 1000px) {
+  .slidecontainer {
+    width: 90vw;
+  }
 }
 
 .slider {
@@ -560,9 +612,10 @@ body {
 
 @media (max-width: 1000px) {
   .slider {
-    width: 100vw;
+    width: 90vw;
   }
 }
+
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -618,7 +671,7 @@ body {
 @media (max-width: 1000px) {
   .input__text {
     width: 90vw;
-    font-size: 14vw;
+    font-size: 18vw;
     height: 20vw;
   }
 }
@@ -760,33 +813,6 @@ td:hover {
 }
 /* table hover end */
 
-/* hover animation*/
-.hovering__container {
-  background-color: transparent;
-  align-items: center;
-  margin-left: auto;
-  margin-bottom: 15vw;
-  text-align: center;
-}
-
-a {
-  font-family: "Ha-MahtzevaVF";
-  color: var(--white);
-  font-size: 3.5vw;
-  letter-spacing: 1px;
-  text-decoration: none;
-  transition: all 500ms ease-in-out;
-  align-items: center;
-  direction: rtl;
-  line-height: 2.8vw;
-  cursor: default;
-}
-
-a > span {
-  cursor: none;
-}
-/* hover animation END*/
-
 /* Strip start */
 /* #scrolling-strip {
   position: relative;
@@ -862,19 +888,20 @@ section .group .row span {
   margin: auto;
   flex-direction: row;
   width: 80%;
-  padding: 10%;
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
 
 @media (max-width: 1000px) {
   .credit__container {
     flex-direction: column;
-    width: 100%;
   }
 }
 
 .credit__container_bezalel {
   display: block;
   align-items: center;
+  justify-content: center;
   align-self: center;
   width: 50%;
   margin-top: auto;
@@ -883,18 +910,24 @@ section .group .row span {
 
 @media (max-width: 1000px) {
   .credit__container_bezalel {
-  width: 35vw;
+  width: 100%;
   }
 }
 
 .p-creditscntr {
-  font-size: 2.15vw;
+  font-size: clamp(1.7rem, 2.15vw, 4rem);
+  line-height: clamp(1.5rem, 2vw, 3.8rem);
   font-variation-settings: "XXXX" 0, "YYYY" 0;
-  line-height: 2vw;
   overflow-wrap: break-word;
   text-align: rtl;
   width: 35vw;
   margin-top: auto;
+}
+
+@media (max-width: 1000px) {
+  .p-creditscntr {
+  width: 100%;
+  }
 }
 
 #bezalel_logo {
@@ -903,11 +936,18 @@ section .group .row span {
   margin-bottom: -1.5%;
 }
 
+@media (max-width: 1000px) {
+  #bezalel_logo {
+    width: 100%;
+    margin-top: -2%;
+  }
+}
+
 .credits_slnt {
   margin: 0;
-  font-size: 2.15vw;
+  font-size: clamp(1.7rem, 2.15vw, 4rem);
+  line-height: clamp(1.5rem, 2vw, 3.8rem);
   font-variation-settings: "XXXX" -20, "YYYY" 20;
-  line-height: 1.9vw;
   overflow-wrap: break-word;
   text-align: center;
   font-family: "Ha-MahtzevaInlineVF";
@@ -915,7 +955,7 @@ section .group .row span {
 
 .credits_h {
   margin: 0;
-  font-size: 4vw;
+  font-size: clamp(3rem, 4vw, 4rem);
 }
 
 .credits_h .char {

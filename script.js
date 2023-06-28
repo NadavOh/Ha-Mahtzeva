@@ -8,13 +8,13 @@ Splitting();
 
 // scroll start
 const headline = document.getElementById("headline");
-const scrollSpeed = 10; // Adjust this value to change the scroll speed
+const scrollSpeed = 12; // Adjust this value to change the scroll speed
 
 window.addEventListener("scroll", function () {
   const scrollPosition = window.scrollY;
   const totalScrollableHeight = document.body.offsetHeight - window.innerHeight;
-  const variationRange = 65; // The range of variation in the font settings
-  const variationStart = -20; // The starting value of the font variation
+  const variationRange = 45; // The range of variation in the font settings
+  const variationStart = 0; // The starting value of the font variation
 
   // Calculate the current font variation setting based on scroll position
   const variationValue =
