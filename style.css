@@ -1,13 +1,35 @@
+@font-face {
+  font-family: "Ha-MahtzevaVF";
+  src: url("./Ha-MahtzevaVF.woff2") format("woff2");
+  font-weight: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Ha-MahtzevaInlineVF";
+  src: url("./Ha-MahtzevaInlineVF.woff2") format("woff2");
+  font-weight: normal;
+  font-stretch: normal;
+}
+
 :root {
   --white: #f7f6f4;
   --black: #121212;
 }
 
 body {
+  /* use css variables for font names for easy switching later on: */
+  --font-family-primary: "Ha-MahtzevaVF";
+  --font-family-secondary: "Ha-MahtzevaInlineVF";
   margin: 0;
   background-color: var(--white);
-  font-family: "Ha-MahtzevaVF", san-serif;
+  font-family: var(--font-family-primary);
   direction: rtl;
+}
+
+body.switch-fonts { /* switch mode for toggle */
+  --font-family-primary: "Ha-MahtzevaInlineVF";
+  --font-family-secondary: "Ha-MahtzevaVF";
 }
 
 ::selection {
@@ -19,7 +41,7 @@ body {
   background-color: var(--black);
   color: var(--white);
   padding: 0%;
-  padding-bottom: 20vw;
+  /* padding-bottom: 20vw; */
 }
 
 .white__background {
@@ -37,65 +59,39 @@ body {
 
 #scroll-container {
   display: flex;
-  flex-direction: column;
+  height: 55vh;
+  overflow: auto; /* Added */
+}
+
+#sticky-container {
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  top: 0;
   align-items: center;
-  justify-content: center;
-  text-align: right;
-  margin-left: 50%;
-  margin-right: 15%;
-  position: relative;
-  height: 100vh;
+  width: 100%;
+  background-color: var(--black);
+  height: 5vw;
+  z-index: 9999;
+  margin-bottom: 1.5vw;
+}
+
+@media (max-width: 1000px) {
+  #sticky-container {
+    height: 12vw;
+    margin-bottom: 2.5vw;
+    padding-top: 3%;
+  }
 }
 
 .headline {
-  font-size: clamp(4.5rem, 12vw, 14rem);
+  font-size: clamp(3rem, 6vw, 8rem);
   font-variation-settings: "YYYY" 0;
-  position: sticky;
-  top: 40%;
-  transform: translateY(-5%);
-  width: 100%;
+  width: auto;
+  margin-left: 2%;
+  margin-right: 6vw;
+  cursor: n-resize;
 }
-
-/* scroll Headline end*/
-
-/* Otiot start */
-.Otiot__container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  width: 60%;
-  margin-top: 2vw;
-  margin-bottom: 2vw;
-  margin-left: 40%;
-  margin-right: 15%;
-}
-
-@media (max-width: 1000px) {
-  .Otiot__container {
-    flex-direction: column;
-  }
-}
-
-.otiot {
-  font-size: 7vw;
-  line-height: 5vw;
-  font-variation-settings: "XXXX" 0, "YYYY" 0;
-  text-align: rtl;
-  letter-spacing: 0.2vw;
-  font-family: "Ha-MahtzevaVF", sans-serif;
-  margin-left: 5%;
-  letter-spacing: 2px;
-}
-
-@media (max-width: 1000px) {
-  .otiot {
-  font-size: 13vw;
-  line-height: 10.5vw;
-  margin-bottom: 5vw;
-  }
-}
-
 
 input[type="checkbox"] {
   display: none;
@@ -115,10 +111,9 @@ label {
 
 @media (max-width: 1000px) {
   label {
-    width: 20vw;
-    height: 10vw;
-    border-radius: 20vw;
-    margin-bottom: 5vw;
+    width: 10vw;
+    height: 5vw;
+    border-radius: 10vw;
   }
 }
 
@@ -138,12 +133,12 @@ label:after {
 
 @media (max-width: 1000px) {
   label:after {
-    top: 0.6vw;
-    left: 0.5vw;
-    width: 9vw;
-    height: 9vw;
-    border-radius: 9vw;
-    border: 0.5vw solid var(--black);
+    top: 0.3vw;
+    left: 0.25vw;
+    width: 4.5vw;
+    height: 4.5vw;
+    border-radius: 4.5vw;
+    border: 0.25vw solid var(--black);
   }
 }
 
@@ -154,7 +149,39 @@ input:checked + label:after {
 
 @media (max-width: 1000px) {
   input:checked + label:after {
-    transform: translateX(10vw);
+    transform: translateX(5vw);
+  }
+}
+/* scroll Headline end*/
+
+/* Otiot start */
+.Otiot__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-right: 6vw;
+}
+
+@media (max-width: 1000px) {
+  .Otiot__container {
+    flex-direction: column;
+    margin-right: 6vw;
+  }
+}
+
+.otiot {
+  font-size: clamp(3.5rem, 8vw, 10rem);
+  line-height: clamp(3rem, 6vw, 8rem);
+  font-variation-settings: "XXXX" 0, "YYYY" 0;
+  text-align: rtl;
+  letter-spacing: 0.2vw;
+  font-family: var(--font-family-primary);
+}
+
+@media (max-width: 1000px) {
+  .otiot {
+  font-size: 13vw;
+  line-height: 10.5vw;
   }
 }
 /* Otiot end */
@@ -167,8 +194,8 @@ input:checked + label:after {
   align-items: center;
   width: auto;
   margin: auto;
-  margin-left: 40%;
-  margin-right: 15%;
+  margin-left: 50%;
+  margin-right: 6vw;
 }
 
 .p-info {
@@ -189,7 +216,7 @@ input:checked + label:after {
   font-size: clamp(1.7rem, 2.15vw, 4rem);
   line-height: clamp(1.5rem, 2vw, 3.8rem);
   overflow-wrap: break-word;
-  font-family: "Ha-MahtzevaInlineVF";
+  font-family: var(--font-family-secondary);
 }
 
 .p-info-eng {
@@ -245,7 +272,6 @@ input:checked + label:after {
   text-align: center;
   display: flex;
   justify-content: center;
-  font-family: "Ha-MahtzevaInlineVF";
   user-select: none;
   animation: breathe 4000ms infinite both;
 }
@@ -267,14 +293,13 @@ input:checked + label:after {
 
 /* 9 alef Start*/
 .container__alef {
-  width: 50vw;
-  height: 50vw;
+  width: 40vw;
+  height: 40vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   margin: 0 auto;
   margin-top: 5vw;
-  margin-bottom: 5vw;
   z-index: 1;
   margin-top: 15vw;
   margin-bottom: 15vw;
@@ -288,15 +313,16 @@ input:checked + label:after {
 }
 
 .cell {
-  width: 10vw;
-  height: 10vw;
-  font-size: 16vw;
+  width: 8vw;
+  height: 8vw;
+  font-size: 14vw;
   text-align: center;
   padding: 4rem;
   transition: 0.75s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
 }
 
 @media (max-width: 1000px) {
@@ -566,7 +592,7 @@ input:checked + label:after {
 }
 
 a {
-  font-family: "Ha-MahtzevaVF";
+  font-family: var(--font-family-primary);
   color: var(--white);
   font-size: clamp(1.8rem, 3.5vw, 4rem);
   line-height: clamp(1.5rem, 2.8vw, 3.8rem);
@@ -660,13 +686,15 @@ a > span {
   text-align: center;
   margin: auto;
   margin-top: 3vw;
-  width: 80%;
+  width: 88%;
   height: 15vw;
-  font-family: "Ha-MahtzevaVF", sans-serif;
+  font-family: var(--font-family-primary);
   font-variation-settings: "XXXX" var(--text-XXXX), "YYYY" var(--text-YYYY);
   color: var(--black);
   border-radius: 5px;
   background-color: var(--white);
+  margin-right: 6vw;
+  margin-left: 6vw;
 }
 
 @media (max-width: 1000px) {
@@ -690,12 +718,13 @@ a > span {
   align-items: center;
   width: 80%;
   margin: auto;
+  padding-bottom: 10vw;
 }
 
 @media (max-width: 700px) {
   #Table-hover__container {
     flex-direction: column-reverse;
-    height: 165vw;
+    height: 140vw;
     width: 90vw;
   }
 }
@@ -758,11 +787,11 @@ td:hover {
 }
 
 .table-container.font-ha-mahtzeva table td {
-  font-family: "Ha-MahtzevaInlineVF", sans-serif;
+  font-family: var(--font-family-secondary);
 }
 
 #content.font-ha-mahtzeva {
-  font-family: "Ha-MahtzevaInlineVF", sans-serif;
+  font-family: var(--font-family-secondary);
 }
 
 #content-container:hover {
@@ -886,16 +915,20 @@ section .group .row span {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: auto;
+  margin-right: 12vw;
+  margin-left: 12vw;
   flex-direction: row;
-  width: 80%;
-  padding-top: 10%;
-  padding-bottom: 10%;
+  width: auto;
+  padding-top: 10vw;
+  padding-bottom: 10vw;
 }
 
 @media (max-width: 1000px) {
   .credit__container {
     flex-direction: column;
+    padding-top: 18vw;
+    margin-left: 6vw;
+    margin-right: 6vw;
   }
 }
 
@@ -904,7 +937,17 @@ section .group .row span {
   align-items: center;
   justify-content: center;
   align-self: center;
-  width: 50%;
+  width: 35vw;
+  margin-top: auto;
+  height: auto;
+}
+
+.credit__container_cntr {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 35vw;
   margin-top: auto;
   height: auto;
 }
@@ -951,7 +994,7 @@ section .group .row span {
   font-variation-settings: "XXXX" -20, "YYYY" 20;
   overflow-wrap: break-word;
   text-align: center;
-  font-family: "Ha-MahtzevaInlineVF";
+  font-family: var(--font-family-secondary);
 }
 
 .credits_h {
@@ -975,19 +1018,3 @@ section .group .row span {
   background: var(--black);
 }
 /* Credits end */
-
-@font-face {
-  font-family: "Ha-MahtzevaVF";
-  src: url("./Ha-MahtzevaVF.woff2") format("woff2");
-  font-weight: normal;
-  font-stretch: normal;
-  color: var(--white);
-}
-
-@font-face {
-  font-family: "Ha-MahtzevaInlineVF";
-  src: url("./Ha-MahtzevaInlineVF.woff2") format("woff2");
-  font-weight: normal;
-  font-stretch: normal;
-  color: var(--white);
-}

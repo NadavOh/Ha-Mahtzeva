@@ -1,8 +1,11 @@
 // scroll to top
 
-// window.onbeforeunload = function () {
-//   window.scrollTo(0, 0);
-// }
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // Optional: Adds smooth scrolling animation
+  });
+}
 
 Splitting();
 
@@ -135,14 +138,7 @@ tdElements.forEach((td) => {
   td.addEventListener("mouseout", () => {
     contentContainer.textContent = ""; // Clear the content of the container when mouseout
   });
-});
-
-function toggleTableFont() {
-  var tableContainer = document.querySelector(".table-container");
-  var contentContainer = document.getElementById("content");
-  tableContainer.classList.toggle("font-ha-mahtzeva");
-  contentContainer.classList.toggle("font-ha-mahtzeva");
-}
+})
 // table hover end
 
 // hovering__container start
@@ -230,13 +226,6 @@ document.onmousemove = mouseMove;
 
 // toggle start
 function toggleFont() {
-  var otiot = document.querySelector(".otiot");
-  var currentFontFamily = otiot.style.fontFamily;
-
-  if (currentFontFamily === "Ha-MahtzevaInlineVF, sans-serif") {
-    otiot.style.fontFamily = ""; // Revert to default font
-  } else {
-    otiot.style.fontFamily = "Ha-MahtzevaInlineVF, sans-serif";
-  }
+  document.body.classList.toggle( "switch-fonts" );
 }
 // toggle end
