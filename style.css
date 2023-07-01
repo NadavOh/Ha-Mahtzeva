@@ -650,6 +650,32 @@ input:checked + label:after {
 }
 /* Animation nadned End*/
 
+/* sound react start */
+.sound-container {
+  margin-top: 40vh;
+  margin-bottom: 40vh;
+}
+
+@media (max-width: 1000px) {
+  .sound-container {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+}
+
+.custom-text {
+  --XXXX: 0;
+  --YYYY: 0;
+  font-variation-settings: "XXXX" var(--XXXX), "YYYY" var(--YYYY);
+  font-size: 10vw;
+  line-height: 9vw;
+  color: var(--white);
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+/* sound react end */
+
 /* hover animation*/
 .hovering__container {
   background-color: transparent;

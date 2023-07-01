@@ -229,3 +229,84 @@ function toggleFont() {
   document.body.classList.toggle( "switch-fonts" );
 }
 // toggle end
+
+// sound react start
+
+// Audio code from Ruth's Demo!! - https://codepen.io/Rumyra/pen/jomXeG
+console.clear();
+// create audio context and make sure it gets activated
+const audioCtx = new AudioContext();
+let data = new Uint8Array(2);
+let isAudioStarted = false;
+
+// create analyser 
+const analyserNode = new AnalyserNode(audioCtx, {
+  fftSize: 64,
+  maxDecibels: -20,
+  minDecibels: -60,
+  smoothingTimeConstant: 0.8,
+});
+
+function getAnalyserData() {
+  requestAnimationFrame(getAnalyserData);
+  analyserNode.getByteFrequencyData(data);
+
+  const minAxisValue = 7.5;
+  const maxAxisValue = 30;
+  const minEventValue = 0;
+  const maxEventValue = 255;
+  const smoothFactor = 0.4; // Adjust this value to control the smoothness of the transition
+
+  // Get the current event values for XXXX and YYYY
+  const element = document.querySelector(".custom-text");
+  const currentEventValueX = data[0];
+  const currentEventValueY = data[1];
+  const currentAxisValueX = parseFloat(
+    getComputedStyle(element).getPropertyValue("--XXXX")
+  );
+  const currentAxisValueY = parseFloat(
+    getComputedStyle(element).getPropertyValue("--YYYY")
+  );
+
+  let newAxisValueX, newAxisValueY;
+  if (currentEventValueX === 0) {
+    newAxisValueX = 7.5;
+  } else {
+    const eventPercentX = (currentEventValueX - minEventValue) / (maxEventValue - minEventValue);
+    const targetAxisValueX = eventPercentX * (maxAxisValue - minAxisValue) + minAxisValue;
+    newAxisValueX = currentAxisValueX + (targetAxisValueX - currentAxisValueX) * smoothFactor;
+  }
+
+  if (currentEventValueY === 0) {
+    newAxisValueY = 7.5;
+  } else {
+    const eventPercentY = (currentEventValueY - minEventValue) / (maxEventValue - minEventValue);
+    const targetAxisValueY = eventPercentY * (maxAxisValue - minAxisValue) + minAxisValue;
+    newAxisValueY = currentAxisValueY + (targetAxisValueY - currentAxisValueY) * smoothFactor;
+  }
+
+  element.style.setProperty("--XXXX", newAxisValueX);
+  element.style.setProperty("--YYYY", newAxisValueY);
+}
+
+function getStreamData() {
+  // pipe in analysing to getUserMedia
+  return navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+    .then(stream => audioCtx.createMediaStreamSource(stream))
+    .then(source => {
+      source.connect(analyserNode);
+    });
+}
+
+function handleFocusEvent() {
+  if (!isAudioStarted) {
+    audioCtx.resume();
+    getStreamData().then(getAnalyserData);
+    isAudioStarted = true;
+  }
+}
+
+const textElement = document.querySelector(".custom-text");
+textElement.addEventListener("focus", handleFocusEvent);
+
+// sound react end
