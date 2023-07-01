@@ -3,7 +3,7 @@
 function scrollToTop() {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth' // Optional: Adds smooth scrolling animation
+    behavior: "smooth", // Optional: Adds smooth scrolling animation
   });
 }
 
@@ -21,8 +21,7 @@ window.addEventListener("scroll", function () {
 
   // Calculate the current font variation setting based on scroll position
   const variationValue =
-    ((scrollPosition * scrollSpeed) / totalScrollableHeight) *
-    variationRange +
+    ((scrollPosition * scrollSpeed) / totalScrollableHeight) * variationRange +
     variationStart;
 
   headline.style["font-variation-settings"] = `'YYYY' ${variationValue.toFixed(
@@ -138,7 +137,7 @@ tdElements.forEach((td) => {
   td.addEventListener("mouseout", () => {
     contentContainer.textContent = ""; // Clear the content of the container when mouseout
   });
-})
+});
 // table hover end
 
 // hovering__container start
@@ -226,7 +225,7 @@ document.onmousemove = mouseMove;
 
 // toggle start
 function toggleFont() {
-  document.body.classList.toggle( "switch-fonts" );
+  document.body.classList.toggle("switch-fonts");
 }
 // toggle end
 
@@ -239,7 +238,7 @@ const audioCtx = new AudioContext();
 let data = new Uint8Array(2);
 let isAudioStarted = false;
 
-// create analyser 
+// create analyser
 const analyserNode = new AnalyserNode(audioCtx, {
   fftSize: 64,
   maxDecibels: -20,
@@ -272,17 +271,23 @@ function getAnalyserData() {
   if (currentEventValueX === 0) {
     newAxisValueX = 7.5;
   } else {
-    const eventPercentX = (currentEventValueX - minEventValue) / (maxEventValue - minEventValue);
-    const targetAxisValueX = eventPercentX * (maxAxisValue - minAxisValue) + minAxisValue;
-    newAxisValueX = currentAxisValueX + (targetAxisValueX - currentAxisValueX) * smoothFactor;
+    const eventPercentX =
+      (currentEventValueX - minEventValue) / (maxEventValue - minEventValue);
+    const targetAxisValueX =
+      eventPercentX * (maxAxisValue - minAxisValue) + minAxisValue;
+    newAxisValueX =
+      currentAxisValueX + (targetAxisValueX - currentAxisValueX) * smoothFactor;
   }
 
   if (currentEventValueY === 0) {
     newAxisValueY = 7.5;
   } else {
-    const eventPercentY = (currentEventValueY - minEventValue) / (maxEventValue - minEventValue);
-    const targetAxisValueY = eventPercentY * (maxAxisValue - minAxisValue) + minAxisValue;
-    newAxisValueY = currentAxisValueY + (targetAxisValueY - currentAxisValueY) * smoothFactor;
+    const eventPercentY =
+      (currentEventValueY - minEventValue) / (maxEventValue - minEventValue);
+    const targetAxisValueY =
+      eventPercentY * (maxAxisValue - minAxisValue) + minAxisValue;
+    newAxisValueY =
+      currentAxisValueY + (targetAxisValueY - currentAxisValueY) * smoothFactor;
   }
 
   element.style.setProperty("--XXXX", newAxisValueX);
@@ -291,9 +296,10 @@ function getAnalyserData() {
 
 function getStreamData() {
   // pipe in analysing to getUserMedia
-  return navigator.mediaDevices.getUserMedia({ audio: true, video: false })
-    .then(stream => audioCtx.createMediaStreamSource(stream))
-    .then(source => {
+  return navigator.mediaDevices
+    .getUserMedia({ audio: true, video: false })
+    .then((stream) => audioCtx.createMediaStreamSource(stream))
+    .then((source) => {
       source.connect(analyserNode);
     });
 }

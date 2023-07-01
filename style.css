@@ -13,8 +13,8 @@
 }
 
 :root {
-  --white: #f7f6f4;
-  --black: #121212;
+  --white: #EBEAE9;
+  --black: #232323;
 }
 
 body {
@@ -27,7 +27,8 @@ body {
   direction: rtl;
 }
 
-body.switch-fonts { /* switch mode for toggle */
+body.switch-fonts {
+  /* switch mode for toggle */
   --font-family-primary: "Ha-MahtzevaInlineVF";
   --font-family-secondary: "Ha-MahtzevaVF";
 }
@@ -37,18 +38,33 @@ body.switch-fonts { /* switch mode for toggle */
   background: var(--white);
 }
 
+.black__backgroundtop {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 0%;
+  height: 100vh;
+}
+
 .black__background {
   background-color: var(--black);
   color: var(--white);
   padding: 0%;
-  /* padding-bottom: 20vw; */
 }
 
 .white__background {
   background-color: var(--white);
   color: var(--black);
-  padding-top: 300pt;
-  padding-bottom: 300pt;
+}
+
+
+.white__background ::selection {
+  color: var(--white);
+  background: var(--black);
+}
+
+.white__backgroundend ::selection {
+  color: var(--white);
+  background: var(--black);
 }
 
 /* scroll Headline */
@@ -59,14 +75,14 @@ body.switch-fonts { /* switch mode for toggle */
 
 #scroll-container {
   display: flex;
-  height: 55vh;
+  height: 60vh;
   overflow: auto; /* Added */
 }
 
 @media (max-width: 1000px) {
-#scroll-container {
-  height: 43vh;
-}
+  #scroll-container {
+    height: 40vh;
+  }
 }
 
 #sticky-container {
@@ -77,9 +93,9 @@ body.switch-fonts { /* switch mode for toggle */
   align-items: center;
   width: 100%;
   background-color: var(--black);
-  height: 5vw;
+  height: 10vh;
   z-index: 9999;
-  margin-bottom: 1.5vw;
+  margin-bottom: 3vh;
 }
 
 @media (max-width: 1000px) {
@@ -152,7 +168,7 @@ label:after {
 }
 
 input:checked + label:after {
-  transform: translateX(2.50vw);
+  transform: translateX(2.5vw);
   background-color: transparent;
 }
 
@@ -165,33 +181,18 @@ input:checked + label:after {
 
 /* Otiot start */
 .Otiot__container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  padding-top: 8vh;
   margin-right: 6vw;
-}
-
-@media (max-width: 1000px) {
-  .Otiot__container {
-    flex-direction: column;
-    margin-right: 6vw;
-  }
+  margin-bottom: 8vh;
 }
 
 .otiot {
-  font-size: clamp(3.5rem, 8vw, 10rem);
+  font-size: clamp(3.5rem, 7.5vw, 10rem);
   line-height: clamp(3rem, 6vw, 8rem);
   font-variation-settings: "XXXX" 0, "YYYY" 0;
   text-align: rtl;
-  letter-spacing: 0.2vw;
+  letter-spacing: 0.3vw;
   font-family: var(--font-family-primary);
-}
-
-@media (max-width: 1000px) {
-  .otiot {
-  font-size: 13vw;
-  line-height: 10.5vw;
-  }
 }
 /* Otiot end */
 
@@ -203,21 +204,23 @@ input:checked + label:after {
   align-items: center;
   width: auto;
   margin: auto;
-  margin-left: 45%;
+  margin-left: 40%;
   margin-right: 6vw;
-}
-
-.p-info {
-  margin: 0;
-  font-size: clamp(2rem, 2.15vw, 4rem);
-  line-height: clamp(1.75rem, 2vw, 3.8rem);
-  overflow-wrap: break-word;
+  padding-bottom: 8vh;
 }
 
 @media (max-width: 1000px) {
   .info__container {
-    width: 85vw;
+    width: 88vw;
   }
+}
+
+.p-info {
+  margin: 0;
+  font-size: clamp(1.9rem, 2.15vw, 4rem);
+  line-height: clamp(1.75rem, 2vw, 3.8rem);
+  overflow-wrap: break-word;
+  letter-spacing: 1px;
 }
 
 .p-info-inline {
@@ -228,13 +231,11 @@ input:checked + label:after {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   margin: 0;
-  font-size: clamp(1.7rem, 2.15vw, 4rem);
-  line-height: clamp(1.5rem, 2vw, 3.8rem);
+  font-size: clamp(1.5rem, 2vw, 3rem);
   overflow-wrap: break-word;
 }
 
 .info-three-d {
-
 }
 
 .info-three-d .char {
@@ -257,8 +258,6 @@ input:checked + label:after {
   }
 }
 /* p-info end */
-
-
 
 .alice__container {
   width: auto;
@@ -313,14 +312,12 @@ input:checked + label:after {
   }
 }
 
-
 /* animation-asterisk start */
 .container__asterisk {
   overflow: hidden;
   position: relative;
   overflow: hidden;
   height: 45vw;
-  margin-top: -7vw;
 }
 
 @media (max-width: 1000px) {
@@ -614,11 +611,11 @@ input:checked + label:after {
 }
 
 .right {
-  animation: swapthings 3s infinite both cubic-bezier(0.17, 0.04, 0.04, 0.99);
+  animation: swapthings 3s infinite both;
 }
 
 .left {
-  animation: swapthings2 3s infinite both cubic-bezier(0.17, 0.04, 0.04, 0.99);
+  animation: swapthings2 3s infinite both;
 }
 
 @keyframes swapthings {
@@ -652,8 +649,15 @@ input:checked + label:after {
 
 /* sound react start */
 .sound-container {
-  margin-top: 40vh;
-  margin-bottom: 40vh;
+  display: flex; 
+  align-items: center;
+  height: 100vh;
+}
+
+@media (max-width: 1000px) {
+  .sound-container {
+    height: 30vh;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -664,11 +668,11 @@ input:checked + label:after {
 }
 
 .custom-text {
-  --XXXX: 0;
-  --YYYY: 0;
+  --XXXX: 7.5;
+  --YYYY: 7.5;
   font-variation-settings: "XXXX" var(--XXXX), "YYYY" var(--YYYY);
-  font-size: 10vw;
-  line-height: 9vw;
+  font-size: clamp(3.5rem, 12vw, 15rem);
+  line-height: clamp(3rem, 7vw, 12.5rem);
   color: var(--white);
   margin: 0;
   width: 100%;
@@ -744,7 +748,6 @@ a > span {
   }
 }
 
-
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -795,7 +798,7 @@ a > span {
   background-color: var(--white);
   margin-right: 6vw;
   margin-left: 6vw;
-  margin-bottom: 6vw;
+  margin-bottom: 8vh;
 }
 
 @media (max-width: 1000px) {
@@ -813,23 +816,23 @@ a > span {
 }
 /* Slider End*/
 
-
 .lifamim__container {
   width: auto;
-  margin-right: 6vw;
-  margin-left: 6vw;
+  padding-right: 6vw;
+  padding-left: 6vw;
+  padding-top: 8vh;
 }
 
 .lifamim {
   font-size: clamp(3.3rem, 13vw, 20rem);
-  line-height: clamp(2rem, 6vw, 15rem);
+  line-height: clamp(2.5rem, 7vw, 15.5rem);
   font-variation-settings: "XXXX" -45, "YYYY" -45;
-  margin-bottom: -6vw;
+  margin-bottom: 6vw;
 }
 
 .lifamim-left {
   font-size: clamp(3.3rem, 13vw, 20rem);
-  line-height: clamp(2rem, 6vw, 15rem);
+  line-height: clamp(2.5rem, 7vw, 15.5rem);
   font-variation-settings: "XXXX" 45, "YYYY" 45;
   text-align: left;
 }
@@ -1030,7 +1033,6 @@ section .group .row span {
 } */
 /* Strip end */
 
-
 /* Credits start */
 .credit__container {
   height: auto;
@@ -1076,7 +1078,7 @@ section .group .row span {
 
 @media (max-width: 1000px) {
   .credit__container_bezalel {
-  width: 100%;
+    width: 100%;
   }
 }
 
@@ -1092,7 +1094,7 @@ section .group .row span {
 
 @media (max-width: 1000px) {
   .p-creditscntr {
-  width: 100%;
+    width: 100%;
   }
 }
 
@@ -1130,13 +1132,4 @@ section .group .row span {
   animation-delay: var(--delay);
 }
 
-.p-creditscntr::selection {
-  color: var(--white);
-  background: var(--black);
-}
-
-.credits_slnt::selection {
-  color: var(--white);
-  background: var(--black);
-}
 /* Credits end */
