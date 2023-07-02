@@ -113,8 +113,8 @@ container.addEventListener("mousemove", (e) => {
 
   const y = 45 - ((e.clientY - containerRect.top) / containerHeight) * 90;
 
-  console.log("x", x);
-  console.log("y", y);
+  // console.log("x", x);
+  // console.log("y", y);
 
   xCurrentPositionLabel.innerHTML = `X${x.toFixed(2)}`;
   yCurrentPositionLabel.innerHTML = `Y${y.toFixed(2)}`;
