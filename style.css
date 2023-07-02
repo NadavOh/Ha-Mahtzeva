@@ -13,7 +13,7 @@
 }
 
 :root {
-  --white: #EBEAE9;
+  --white: #ebeae9;
   --black: #232323;
 }
 
@@ -216,7 +216,8 @@ input:checked + label:after {
 
 @media (max-width: 2000px) {
   .info__container {
-  padding-bottom: 7vh;  }
+    padding-bottom: 7vh;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -304,16 +305,16 @@ input:checked + label:after {
 
 .names br {
   display: none;
-} 
+}
 
 @media (max-width: 1000px) {
   .alice__container {
     margin-left: 0vw;
   }
-  
+
   .names br {
     display: flex;
-  } 
+  }
 }
 
 .zahal {
@@ -698,7 +699,7 @@ input:checked + label:after {
 
 /* sound react start */
 .sound-container {
-  display: flex; 
+  display: flex;
   align-items: center;
   height: 110vh;
   margin-bottom: auto;
@@ -839,11 +840,11 @@ a > span {
 
 .input__text {
   font-size: 12vw;
-  display: block;
+  display: flex;
   border: none;
   text-align: center;
   margin: auto;
-  margin-top: 3vw;
+  margin-top: 1.5vw;
   width: 88vw;
   height: 15vw;
   font-family: var(--font-family-primary);
@@ -860,7 +861,6 @@ a > span {
   .input__text {
     font-size: 18vw;
     height: 20vw;
-    margin: auto;
     margin-top: 3vw;
   }
 }
