@@ -844,7 +844,7 @@ a > span {
   text-align: center;
   margin: auto;
   margin-top: 3vw;
-  width: 88%;
+  width: 88vw;
   height: 15vw;
   font-family: var(--font-family-primary);
   font-variation-settings: "XXXX" var(--text-XXXX), "YYYY" var(--text-YYYY);
@@ -858,7 +858,6 @@ a > span {
 
 @media (max-width: 1000px) {
   .input__text {
-    width: 90vw;
     font-size: 18vw;
     height: 20vw;
     margin: auto;
