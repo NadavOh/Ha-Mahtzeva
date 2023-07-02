@@ -84,6 +84,12 @@ body.switch-fonts {
   }
 }
 
+@media (max-width: 2000px) {
+  #scroll-container {
+    height: 60vh;
+  }
+}
+
 #sticky-container {
   display: flex;
   flex-direction: row;
@@ -212,6 +218,11 @@ input:checked + label:after {
   .info__container {
     width: 88vw;
   }
+}
+
+@media (max-width: 2000px) {
+  .info__container {
+  padding-bottom: 7vh;  }
 }
 
 .p-info {
@@ -710,11 +721,12 @@ input:checked + label:after {
   --YYYY: 7.5;
   font-variation-settings: "XXXX" var(--XXXX), "YYYY" var(--YYYY);
   font-size: clamp(4rem, 12vw, 15rem);
-  line-height: clamp(3.5rem, 7vw, 12.5rem);
+  line-height: clamp(3.5rem, 10vw, 12.5rem);
   color: var(--white);
   margin: 0;
   width: 100%;
   text-align: center;
+  padding: 2%;
 }
 /* sound react end */
 
@@ -890,7 +902,7 @@ a > span {
   padding-bottom: 10vw;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   #Table-hover__container {
     flex-direction: column-reverse;
     height: 140vw;
@@ -908,7 +920,7 @@ a > span {
   justify-content: center;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   #content-container {
     width: 90vw;
     height: 60vw;
@@ -925,7 +937,7 @@ table {
   table-layout: fixed;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   table {
     width: 90vw;
     height: 60vw;
@@ -942,7 +954,7 @@ td {
   vertical-align: middle;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   td {
     font-size: 8vw;
   }
@@ -1077,7 +1089,6 @@ section .group .row span {
 /* Strip end */
 
 /* Credits start */
-
 .white__backgroundend {
   background-color: var(--white);
   color: var(--black);
@@ -1118,6 +1129,7 @@ section .group .row span {
   width: 35vw;
   margin-top: auto;
   height: auto;
+  margin-right: 2vw;
 }
 
 .credit__container_cntr {
@@ -1125,7 +1137,6 @@ section .group .row span {
   align-items: center;
   justify-content: center;
   align-self: center;
-  width: 40vw;
   margin-top: auto;
   height: auto;
 }
@@ -1153,7 +1164,7 @@ section .group .row span {
 }
 
 #bezalel_logo {
-  width: 60%;
+  width: 70%;
   mix-blend-mode: multiply;
   margin-bottom: -1.5%;
 }
