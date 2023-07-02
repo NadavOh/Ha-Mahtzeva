@@ -78,15 +78,15 @@ body.switch-fonts {
   overflow: auto; /* Added */
 }
 
-@media (max-width: 1000px) {
-  #scroll-container {
-    height: 45vh;
-  }
-}
-
 @media (max-width: 2000px) {
   #scroll-container {
     height: 60vh;
+  }
+}
+
+@media (max-width: 1000px) {
+  #scroll-container {
+    height: 44vh;
   }
 }
 
@@ -214,15 +214,16 @@ input:checked + label:after {
   padding-bottom: 12vh;
 }
 
-@media (max-width: 1000px) {
-  .info__container {
-    width: 88vw;
-  }
-}
-
 @media (max-width: 2000px) {
   .info__container {
   padding-bottom: 7vh;  }
+}
+
+@media (max-width: 1000px) {
+  .info__container {
+    width: 88vw;
+    padding-bottom: 12vh;
+  }
 }
 
 .p-info {
