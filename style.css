@@ -222,14 +222,6 @@ input:checked + label:after {
   font-family: "Ha-MahtzevaVF";
 }
 
-.p-info-eng {
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
-  margin: 0;
-  font-size: clamp(1.5rem, 2vw, 3rem);
-  overflow-wrap: break-word;
-}
-
 .info-three-d {
 }
 
