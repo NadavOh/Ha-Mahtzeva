@@ -251,7 +251,11 @@ input:checked + label:after {
 }
 
 .p-info-inline {
-  font-family: var(--font-family-secondary);
+  font-family: "Ha-MahtzevaInlineVF";
+}
+
+.p-info-reg {
+  font-family: "Ha-MahtzevaVF";
 }
 
 .p-info-eng {
@@ -318,7 +322,7 @@ input:checked + label:after {
 }
 
 .zahal {
-  animation: zahal 7500ms infinite both;
+  animation: zahal 6000ms infinite both;
 }
 
 @keyframes zahal {
@@ -336,7 +340,7 @@ input:checked + label:after {
 }
 
 .alice {
-  animation: alice 7500ms infinite both;
+  animation: alice 6000ms infinite both;
 }
 
 @keyframes alice {
@@ -879,17 +883,28 @@ a > span {
 }
 
 .lifamim {
-  font-size: clamp(3.3rem, 13vw, 20rem);
-  line-height: clamp(2.5rem, 7vw, 15.5rem);
+  font-size: clamp(3.3rem, 12vw, 20rem);
+  line-height: clamp(3rem, 9vw, 14rem);
   font-variation-settings: "XXXX" -45, "YYYY" -45;
-  margin-bottom: 6vw;
+  margin-bottom: 2vw;
+  transition: 500ms ease-in-out;
+  margin-left: 15vw;
+}
+
+.lifamim:hover {
+  font-variation-settings: "XXXX" -45, "YYYY" 0;
 }
 
 .lifamim-left {
-  font-size: clamp(3.3rem, 13vw, 20rem);
-  line-height: clamp(2.5rem, 7vw, 15.5rem);
+  font-size: clamp(3.3rem, 12vw, 20rem);
+  line-height: clamp(3rem, 9vw, 14rem);
   font-variation-settings: "XXXX" 45, "YYYY" 45;
   text-align: left;
+  transition: 500ms ease-in-out;
+}
+
+.lifamim-left:hover {
+  font-variation-settings: "XXXX" 45, "YYYY" 0;
 }
 
 /* table hover start */
