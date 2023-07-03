@@ -38,17 +38,17 @@ body.switch-fonts {
   background: var(--white);
 }
 
-.black__backgroundtop {
-  background-color: var(--black);
-  color: var(--white);
-  padding: 0%;
-  height: 100vh;
-}
-
 .black__background {
   background-color: var(--black);
   color: var(--white);
   padding: 0%;
+}
+
+.black__background1 {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 0%;
+  padding-top: 35vh;
 }
 
 .white__background {
@@ -67,46 +67,22 @@ body.switch-fonts {
 }
 
 /* scroll Headline */
-.scroll-wrapper {
-  height: 50vw;
-  overflow-y: scroll;
-}
-
-#scroll-container {
-  display: flex;
-  height: 55vh;
-  overflow: auto; /* Added */
-}
-
-@media (max-width: 2000px) {
-  #scroll-container {
-    height: 60vh;
-  }
-}
-
-@media (max-width: 1200px) {
-  #scroll-container {
-    height: 44vh;
-  }
-}
-
 #sticky-container {
   display: flex;
   flex-direction: row;
   position: sticky;
-  top: 0;
+  top: -1px;
   align-items: center;
   width: 100%;
   background-color: var(--black);
   height: 10vh;
   z-index: 9999;
-  margin-bottom: 3vh;
 }
 
 @media (max-width: 1200px) {
   #sticky-container {
-    height: 6vh;
-    margin-bottom: 2vh;
+    height: 7vh;
+    margin-bottom: 3vh;
     padding-top: 2%;
     padding-bottom: 1%;
     justify-content: space-between;
@@ -114,7 +90,7 @@ body.switch-fonts {
 }
 
 .headline {
-  font-size: clamp(3.5rem, 6vw, 8rem);
+  font-size: clamp(4rem, 7vw, 8rem);
   font-variation-settings: "YYYY" 0;
   width: auto;
   margin-left: 2%;
@@ -135,7 +111,6 @@ label {
   display: block;
   border-radius: 5vw;
   position: relative;
-  transition: background-color 0.3s ease-in-out;
 }
 
 @media (max-width: 1200px) {
@@ -184,29 +159,29 @@ input:checked + label:after {
 }
 /* scroll Headline end*/
 
-/* Otiot start */
-.Otiot__container {
-  padding-top: 8vh;
-  margin-right: 6vw;
-  margin-bottom: 8vh;
-}
-
-.otiot {
-  font-size: clamp(4.8rem, 7.5vw, 12rem);
-  line-height: clamp(3.8rem, 6vw, 9rem);
-  font-variation-settings: "XXXX" 0, "YYYY" 0;
-  text-align: rtl;
-  letter-spacing: 0.35vw;
-  font-family: var(--font-family-primary);
-}
-/* Otiot end */
-
 /* p-info start */
 .info__container {
+  width: auto;
+  margin-left: 35%;
+  margin-right: 6vw;
+  padding-bottom: 6vw;
+}
+
+.p-info {
+  margin: 0;
+  font-size: 2.8vw;
+  line-height: 2.2vw;
+  overflow-wrap: break-word;
+  letter-spacing: 0.03vw;
+}
+
+#scroll-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+  height: 55vh;
+}
+
+.info__container2 {
   width: auto;
   margin: auto;
   margin-left: 40%;
@@ -214,40 +189,29 @@ input:checked + label:after {
   padding-bottom: 12vh;
 }
 
-@media (max-width: 2000px) {
-  .info__container {
-    padding-bottom: 7vh;
-  }
-}
-
-@media (max-width: 1200px) {
-  .info__container {
-    width: 88vw;
-    padding-bottom: 12vh;
-  }
-}
-
-.p-info {
-  margin: 0;
-  font-size: clamp(1.9rem, 2.15vw, 4rem);
-  line-height: clamp(1.75rem, 2vw, 3.8rem);
-  overflow-wrap: break-word;
-  letter-spacing: 0.03vw;
-  height: 20vh;
-}
-
-@media (max-width: 1200px) {
-  .p-info {
-    height: 35vh;
-  }
-}
-
 .p-info2 {
   margin: 0;
   font-size: clamp(1.9rem, 2.15vw, 4rem);
   line-height: clamp(1.75rem, 2vw, 3.8rem);
   overflow-wrap: break-word;
-  letter-spacing: 0.03vw;
+  letter-spacing: 0.02vw;
+}
+
+@media (max-width: 1200px) {
+  .info__container {
+    width: 88vw;
+    margin-left: 0%;
+  }
+
+  .p-info {
+    font-size: 4vh;
+    line-height: 3.6vh;
+  }
+
+  .info__container2 {
+    width: 88vw;
+    margin-left: 0%;
+  }
 }
 
 .p-info-inline {
@@ -290,106 +254,45 @@ input:checked + label:after {
 }
 /* p-info end */
 
-.alice__container {
-  width: auto;
+/* Otiot start */
+.Otiot__container {
+  padding-top: 8vh;
   margin-right: 6vw;
-  margin-left: 6vw;
+  margin-bottom: 8vh;
 }
 
-.alice-p {
-  font-size: clamp(2.5rem, 8vw, 10rem);
-  line-height: clamp(2.8rem, 6vw, 8rem);
+.otiot {
+  font-size: clamp(4.8rem, 7.5vw, 12rem);
+  line-height: clamp(3.8rem, 6vw, 9rem);
+  font-variation-settings: "XXXX" 0, "YYYY" 0;
+  text-align: rtl;
+  letter-spacing: 0.35vw;
+  font-family: var(--font-family-primary);
 }
-
-.names {
-  font-family: var(--font-family-secondary);
-  font-size: clamp(4rem, 4vw, 5rem);
-  font-variation-settings: "XXXX" 0, "YYYY" -22.5;
-}
-
-.names br {
-  display: none;
-}
-
-@media (max-width: 1200px) {
-  .alice__container {
-    margin-left: 0vw;
-  }
-
-  .names br {
-    display: flex;
-  }
-}
-
-.zahal {
-  animation: zahal 6000ms infinite both;
-}
-
-@keyframes zahal {
-  0% {
-    font-variation-settings: "XXXX" -35, "YYYY" 0;
-  }
-
-  50% {
-    font-variation-settings: "XXXX" 0, "YYYY" 0;
-  }
-
-  100% {
-    font-variation-settings: "XXXX" -35, "YYYY" 0;
-  }
-}
-
-.alice {
-  animation: alice 6000ms infinite both;
-}
-
-@keyframes alice {
-  0% {
-    font-variation-settings: "XXXX" 0, "YYYY" 0;
-  }
-
-  50% {
-    font-variation-settings: "XXXX" 35, "YYYY" 0;
-  }
-
-  100% {
-    font-variation-settings: "XXXX" 0, "YYYY" 0;
-  }
-}
+/* Otiot end */
 
 /* animation-asterisk start */
-.container__asterisk {
-  overflow: hidden;
-  position: relative;
-  overflow: hidden;
-  height: 45vw;
-  margin-top: -10vw;
+.container__XY {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70vw;
+  justify-self: center;
+  margin: auto;
 }
 
-@media (max-width: 1200px) {
-  .container__asterisk {
-    height: 130vw;
-    margin-top: -30vw;
-  }
-}
-
-.animation-asterisk {
+.animation-X {
   display: inline-block;
-  font-size: 70vw;
+  font-size: 50vw;
   text-align: center;
   display: flex;
   justify-content: center;
   user-select: none;
-  animation: breathe 4000ms infinite both;
+  width: 35vw;
+  animation: XXXX 4000ms infinite both;
 }
 
-@media (max-width: 1200px) {
-  .animation-asterisk {
-    font-size: 200vw;
-  }
-}
-
-@keyframes breathe {
+@keyframes XXXX {
   0% {
     font-variation-settings: "XXXX" -45, "YYYY" 0;
   }
@@ -402,6 +305,47 @@ input:checked + label:after {
     font-variation-settings: "XXXX" -45, "YYYY" 0;
   }
 }
+
+.animation-Y {
+  display: inline-block;
+  font-size: 50vw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+  width: 35vw;
+  animation: YYYY 4000ms infinite both;
+}
+
+@keyframes YYYY {
+  0% {
+    font-variation-settings: "XXXX" 0, "YYYY" -45;
+  }
+
+  50% {
+    font-variation-settings: "XXXX" 0, "YYYY" 45;
+  }
+
+  100% {
+    font-variation-settings: "XXXX" 0, "YYYY" -45;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container__XY {
+    margin-top: 10vw;
+  }
+
+  .animation-X {
+    font-size: 55vw;
+    width: 35vw;
+  }
+
+  .animation-Y {
+    font-size: 55vw;
+    width: 35vw;
+  }
+}
 /* animation-asterisk end */
 
 /* 9 alef Start*/
@@ -412,7 +356,6 @@ input:checked + label:after {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   margin: 0 auto;
-  margin-top: 5vw;
   z-index: 1;
   margin-bottom: 5vw;
 }
@@ -506,6 +449,75 @@ input:checked + label:after {
   font-variation-settings: "XXXX" 45, "YYYY" 45;
 }
 /* 9alef End*/
+
+/* alice start */
+.alice__container {
+  width: auto;
+  margin-right: 6vw;
+  margin-left: 6vw;
+}
+
+.alice-p {
+  font-size: clamp(2.5rem, 8vw, 10rem);
+  line-height: clamp(2.8rem, 6vw, 8rem);
+}
+
+.names {
+  font-family: var(--font-family-secondary);
+  font-size: clamp(4rem, 4vw, 5rem);
+  font-variation-settings: "XXXX" 0, "YYYY" -22.5;
+}
+
+.names br {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .alice__container {
+    margin-left: 0vw;
+  }
+
+  .names br {
+    display: flex;
+  }
+}
+
+.zahal {
+  animation: zahal 6000ms infinite both;
+}
+
+@keyframes zahal {
+  0% {
+    font-variation-settings: "XXXX" -35, "YYYY" 0;
+  }
+
+  50% {
+    font-variation-settings: "XXXX" 0, "YYYY" 0;
+  }
+
+  100% {
+    font-variation-settings: "XXXX" -35, "YYYY" 0;
+  }
+}
+
+.alice {
+  animation: alice 6000ms infinite both;
+}
+
+@keyframes alice {
+  0% {
+    font-variation-settings: "XXXX" 0, "YYYY" 0;
+  }
+
+  50% {
+    font-variation-settings: "XXXX" 35, "YYYY" 0;
+  }
+
+  100% {
+    font-variation-settings: "XXXX" 0, "YYYY" 0;
+  }
+}
+/* alice end */
 
 /* Transform Container */
 #transform__container {
@@ -845,6 +857,7 @@ a > span {
 .input__text {
   font-size: 12vw;
   display: flex;
+  justify-self: center;
   border: none;
   text-align: center;
   margin: auto;
@@ -856,8 +869,6 @@ a > span {
   color: var(--black);
   border-radius: 5px;
   background-color: var(--white);
-  margin-right: 6vw;
-  margin-left: 6vw;
   margin-bottom: 8vh;
 }
 
