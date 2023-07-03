@@ -888,7 +888,6 @@ a > span {
   font-variation-settings: "XXXX" -45, "YYYY" -45;
   margin-bottom: 2vw;
   transition: 500ms ease-in-out;
-  margin-left: 15vw;
 }
 
 .lifamim:hover {

@@ -316,3 +316,24 @@ const textElement = document.querySelector(".custom-text");
 textElement.addEventListener("focus", handleFocusEvent);
 
 // sound react end
+
+function touchHandler(event) {
+	var touch = event.changedTouches[0];
+	var simulatedEvent = new MouseEvent({
+		touchstart: "mousedown",
+		touchmove: "mousemove",
+		touchend: "mouseup"
+	}[event.type], {
+		bubbles: true, cancelable: true, view: window, detail: 1,
+		screenX: touch.screenX, screenY: touch.screenY, clientX: touch.clientX, clientY: touch.clientY,
+		ctrlKey: false, altKey: false, shiftKey: false, metaKey: false, button: 0, relatedTarget: null
+	});
+	touch.target.dispatchEvent(simulatedEvent);
+}
+function init() {
+        // I suggest you be far more specific than "document"
+	document.addEventListener("touchstart", touchHandler, true);
+	document.addEventListener("touchmove", touchHandler, true);
+	document.addEventListener("touchend", touchHandler, true);
+	document.addEventListener("touchcancel", touchHandler, true);
+}
