@@ -192,7 +192,7 @@ input:checked + label:after {
 
 .p-info2 {
   margin: 0;
-  font-size: clamp(1.9rem, 2.15vw, 4rem);
+  font-size: clamp(2rem, 2.15vw, 4rem);
   line-height: clamp(1.75rem, 2vw, 3.8rem);
   overflow-wrap: break-word;
   letter-spacing: 0.02vw;
@@ -759,7 +759,7 @@ input:checked + label:after {
   touch-action: none;
   display: flex;
   justify-content: center;
-  width: 90%;
+  width: auto;
 }
 
 ul{
@@ -883,7 +883,7 @@ a > span {
 
 @media (max-width: 1200px) {
   .input__text {
-    font-size: 18vw;
+    font-size: 15vw;
     height: 20vw;
   }
 
@@ -1186,10 +1186,10 @@ section .group .row span {
 }
 
 .p-creditscntr {
-  font-size: clamp(1.9rem, 2.15vw, 4rem);
+  font-size: clamp(2rem, 2.15vw, 4rem);
   line-height: clamp(1.75rem, 2vw, 3.8rem);
   overflow-wrap: break-word;
-  letter-spacing: 0.025vw;
+  letter-spacing: 0.02vw;
   text-align: rtl;
   width: 40vw;
   margin-top: auto;
@@ -1216,8 +1216,6 @@ section .group .row span {
 
 .credits_slnt {
   margin: 0;
-  font-size: clamp(1.7rem, 2.15vw, 4rem);
-  line-height: clamp(1.5rem, 2vw, 3.8rem);
   font-variation-settings: "XXXX" -20, "YYYY" 20;
   overflow-wrap: break-word;
   text-align: center;
@@ -1251,8 +1249,8 @@ section .group .row span {
 }
 
 .tipa {
-  font-size: clamp(4rem, 5vw, 7rem);
-  line-height: clamp(3.2rem, 4.2vw, 6rem);
+  font-size: clamp(4.75rem, 5vw, 7rem);
+  line-height: clamp(3.3rem, 4.2vw, 6rem);
   justify-self: center;
   font-variation-settings: "XXXX" 0, "YYYY" 0;
   cursor: pointer;

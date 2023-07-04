@@ -369,9 +369,8 @@ textElement.addEventListener("focus", handleFocusEvent);
 
 // sound react end
 
-
 const textContainer = document.getElementById("tipaContainer");
-const text = textContainer.innerHTML;
+const text = textContainer.innerHTML.trim();
 
 let isFlipped = false; // Variable to track the flip state
 
@@ -379,30 +378,19 @@ let html = "";
 for (let i = 0; i < text.length; i++) {
   const angleX = isFlipped ? -45 + (i * (90 / (text.length - 1))) : 45 - (i * (90 / (text.length - 1)));
   const angleY = isFlipped ? -45 + (i * (90 / (text.length - 1))) : 45 - (i * (90 / (text.length - 1)));
-  html += `<span class="letter" style="font-variation-settings: 'XXXX' ${angleX}, 'YYYY' ${angleY};">${text[i]}</span>`;
+  html += `<span class="letter" style="font-variation-settings: 'XXXX' ${angleX.toFixed(3)}, 'YYYY' ${angleY.toFixed(3)};">${text[i]}</span>`;
 }
 
 textContainer.innerHTML = html;
 
-textContainer.addEventListener("click", function() {
+textContainer.addEventListener("click", function () {
   isFlipped = !isFlipped; // Toggle the flip state
 
   const letters = textContainer.getElementsByClassName("letter");
   for (let i = 0; i < letters.length; i++) {
     const angleX = isFlipped ? -45 + (i * (90 / (text.length - 1))) : 45 - (i * (90 / (text.length - 1)));
     const angleY = isFlipped ? -45 + (i * (90 / (text.length - 1))) : 45 - (i * (90 / (text.length - 1)));
-    letters[i].style.fontVariationSettings = `'XXXX' ${angleX}, 'YYYY' ${angleY}`;
+    letters[i].style.fontVariationSettings = `'XXXX' ${angleX.toFixed(3)}, 'YYYY' ${angleY.toFixed(3)}`;
   }
 });
-
-
-
-
-
-
-
-
-
-
-
 
