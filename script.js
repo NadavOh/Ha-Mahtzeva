@@ -204,7 +204,7 @@ const touchMove = (e) => {
     const distanceY = Math.abs(e.touches[0].clientY - y);
     const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 
-    const maxDistance = 120;
+    const maxDistance = 100;
     const maxVariation = 45;
     const minVariation = 0;
 

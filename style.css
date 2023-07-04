@@ -327,6 +327,8 @@ input:checked + label:after {
 @media (max-width: 1200px) {
   .container__XY {
     margin-top: 10vw;
+    margin-bottom: 5vw;
+    width: 75vw;
   }
 
   .animation-X {
@@ -358,6 +360,8 @@ input:checked + label:after {
   .container__alef {
     width: 90vw;
     height: 90vw;
+    margin-bottom: 20vw;
+    margin-top: 0vw;
   }
 }
 
@@ -376,10 +380,10 @@ input:checked + label:after {
 
 @media (max-width: 1200px) {
   .cell {
-    width: 10vw;
-    height: 10vw;
-    padding: 2rem;
-    font-size: 22vw;
+    width: 29vw;
+    height: 29vw;
+    padding: 1px;
+    font-size: 30vw;
   }
 }
 
@@ -535,7 +539,7 @@ input:checked + label:after {
   #transform__container {
     width: 90vw;
     height: 90vw;
-    margin-top: 15vw;
+    margin-top: 25vw;
     margin-bottom: 3vw;
   }
 }
@@ -662,9 +666,9 @@ input:checked + label:after {
 
 @media (max-width: 1200px) {
   .animation2 {
-    font-size: 14vw;
-    line-height: 12vw;
-    margin-top: 12vw;
+    font-size: 12vw;
+    line-height: 10vw;
+    margin-top: 20vw;
   }
 
   .animation2 br {
@@ -775,6 +779,17 @@ a {
   cursor: default;
 }
 
+@media (max-width: 1200px) {
+  a {
+    font-size: clamp(1.9rem, 2.15vw, 4rem);
+    line-height: clamp(1.75rem, 2vw, 3.8rem);
+  }
+
+  .hovering__container {
+    margin-bottom: 15vw;
+  }
+}
+
 a > span {
   cursor: none;
 }
@@ -874,6 +889,7 @@ a > span {
 
   #text-container {
     margin-top: 3vw;
+    margin-bottom: 20vw;
   }
 }
 
@@ -902,6 +918,7 @@ a > span {
 }
 
 .lifamim-left {
+  font-family: var(--font-family-secondary);
   font-size: clamp(3.3rem, 12vw, 20rem);
   line-height: clamp(3rem, 9vw, 14rem);
   font-variation-settings: "XXXX" 45, "YYYY" 45;
@@ -926,7 +943,7 @@ a > span {
 @media (max-width: 1200px) {
   #Table-hover__container {
     flex-direction: column-reverse;
-    height: 140vw;
+    height: 130vw;
     width: 90vw;
   }
 }
@@ -1000,7 +1017,7 @@ td:hover {
 }
 
 #content {
-  font-size: clamp(15rem, 30vw, 35rem);
+  font-size: clamp(20rem, 30vw, 35rem);
   color: var(--white);
   animation: table-animation 8000ms infinite both;
 }
@@ -1225,6 +1242,12 @@ section .group .row span {
   justify-content: center;
   margin-top: 10vw;
   -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+}
+
+@media (max-width: 1200px) {
+  .ot-ot-container {
+    margin-top: 20vw;
+  }
 }
 
 .tipa {
