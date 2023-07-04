@@ -350,6 +350,7 @@ input:checked + label:after {
   margin: 0 auto;
   z-index: 1;
   margin-bottom: 5vw;
+  margin-top: -7vw;
 }
 
 @media (max-width: 1200px) {
@@ -450,13 +451,13 @@ input:checked + label:after {
 }
 
 .alice-p {
-  font-size: clamp(2.5rem, 8vw, 10rem);
-  line-height: clamp(2.8rem, 6vw, 8rem);
+  font-size: clamp(2.5rem, 6vw, 8rem);
+  line-height: clamp(2.8rem, 4.3vw, 6.5rem);
 }
 
 .names {
   font-family: var(--font-family-secondary);
-  font-size: clamp(4rem, 4vw, 5rem);
+  font-size: clamp(4rem, 4vw, 4rem);
   font-variation-settings: "XXXX" 0, "YYYY" -22.5;
 }
 
@@ -651,7 +652,7 @@ input:checked + label:after {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 10vw;
+  margin-top: 8vw;
 }
 
 .animation2 br {
@@ -662,6 +663,7 @@ input:checked + label:after {
   .animation2 {
     font-size: 14vw;
     line-height: 12vw;
+    margin-top: 12vw;
   }
 
   .animation2 br {
@@ -710,7 +712,7 @@ input:checked + label:after {
 .sound-container {
   display: flex;
   align-items: center;
-  height: 110vh;
+  height: 100vh;
   margin-bottom: auto;
 }
 
@@ -745,27 +747,24 @@ input:checked + label:after {
 .hovering__container {
   background-color: transparent;
   align-items: center;
-  margin-left: auto;
-  margin-bottom: 15vw;
+  margin: auto;
+  margin-bottom: 10vw;
   text-align: center;
   padding: 0% !important;
   touch-action: none;
+  display: flex;
+  justify-content: center;
+  width: 90%;
 }
 
-@media (max-width: 1200px) {
-  .hovering__container {
-    margin-left: 40px;
-  }
-
-  .hovering__container br {
-    display: none;
-  }
+ul{
+  padding-inline-start: 0px;
 }
 
 a {
   font-family: var(--font-family-primary);
   color: var(--white);
-  font-size: clamp(1.8rem, 3.5vw, 4rem);
+  font-size: clamp(1.7rem, 3.5vw, 4rem);
   line-height: clamp(1.6rem, 2.8vw, 3.8rem);
   letter-spacing: 1px;
   text-decoration: none;
@@ -874,7 +873,6 @@ a > span {
 
   #text-container {
     margin-top: 3vw;
-    margin-bottom: 0%;
   }
 }
 
@@ -885,10 +883,9 @@ a > span {
 /* Slider End*/
 
 .lifamim__container {
-  width: auto;
   padding-right: 6vw;
   padding-left: 6vw;
-  padding-top: 8vh;
+  user-select: none;
 }
 
 .lifamim {
