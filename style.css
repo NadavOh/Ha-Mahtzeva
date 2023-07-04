@@ -845,32 +845,36 @@ a > span {
 }
 
 #text-container {
+  margin: 6vw;
   margin-bottom: 10vw;
+  margin-top: 1.5vw;
+  height: auto;
+  display: flex;
+  justify-items: center;
+  width: 88%;
 }
 
 .input__text {
   font-size: 12vw;
-  display: flex;
-  justify-self: center;
-  border: none;
   text-align: center;
-  margin: auto;
-  margin-top: 1.5vw;
-  width: 88vw;
+  width: 100%;
   height: 15vw;
   font-family: var(--font-family-primary);
   font-variation-settings: "XXXX" var(--text-XXXX), "YYYY" var(--text-YYYY);
   color: var(--black);
   border-radius: 5px;
   background-color: var(--white);
-  margin-bottom: 8vh;
 }
 
 @media (max-width: 1200px) {
   .input__text {
     font-size: 18vw;
     height: 20vw;
+  }
+
+  #text-container {
     margin-top: 3vw;
+    margin-bottom: 0%;
   }
 }
 

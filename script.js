@@ -3,7 +3,7 @@
 function scrollToTop() {
   window.scrollTo({
     top: 0,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 }
 
@@ -124,9 +124,11 @@ container.addEventListener("mousemove", (e) => {
 
 container.addEventListener("touchmove", (e) => {
   const containerRect = container.getBoundingClientRect();
-  const x = ((e.touches[0].clientX - containerRect.left) / containerWidth) * 90 - 45;
+  const x =
+    ((e.touches[0].clientX - containerRect.left) / containerWidth) * 90 - 45;
 
-  const y = 45 - ((e.touches[0].clientY - containerRect.top) / containerHeight) * 90;
+  const y =
+    45 - ((e.touches[0].clientY - containerRect.top) / containerHeight) * 90;
 
   // console.log("x", x);
   // console.log("y", y);
@@ -366,5 +368,3 @@ const textElement = document.querySelector(".custom-text");
 textElement.addEventListener("focus", handleFocusEvent);
 
 // sound react end
-
-
