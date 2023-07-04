@@ -526,6 +526,7 @@ input:checked + label:after {
   overflow: hidden;
   cursor: crosshair;
   margin-top: 10vw;
+  touch-action: none;
 }
 
 @media (max-width: 1200px) {
@@ -748,6 +749,7 @@ input:checked + label:after {
   margin-bottom: 15vw;
   text-align: center;
   padding: 0% !important;
+  touch-action: none;
 }
 
 @media (max-width: 1200px) {

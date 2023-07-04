@@ -121,6 +121,21 @@ container.addEventListener("mousemove", (e) => {
 
   title.style.fontVariationSettings = `'YYYY' ${y}, 'XXXX' ${x}`;
 });
+
+container.addEventListener("touchmove", (e) => {
+  const containerRect = container.getBoundingClientRect();
+  const x = ((e.touches[0].clientX - containerRect.left) / containerWidth) * 90 - 45;
+
+  const y = 45 - ((e.touches[0].clientY - containerRect.top) / containerHeight) * 90;
+
+  // console.log("x", x);
+  // console.log("y", y);
+
+  xCurrentPositionLabel.innerHTML = `X${x.toFixed(2)}`;
+  yCurrentPositionLabel.innerHTML = `Y${y.toFixed(2)}`;
+
+  title.style.fontVariationSettings = `'YYYY' ${y}, 'XXXX' ${x}`;
+});
 // transform - hover end
 
 // table hover start
@@ -174,6 +189,41 @@ const mouseMove = (e) => {
 };
 
 document.onmousemove = mouseMove;
+
+const touchMove = (e) => {
+  const chars = document.querySelectorAll("nav a .char");
+
+  [...chars].forEach((char) => {
+    const position = char.getBoundingClientRect();
+    const x = position.left + position.width / 2;
+    const y = position.top + position.height / 2;
+
+    const distanceX = Math.abs(e.touches[0].clientX - x);
+    const distanceY = Math.abs(e.touches[0].clientY - y);
+    const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+
+    const maxDistance = 120;
+    const maxVariation = 45;
+    const minVariation = 0;
+
+    if (distance > maxDistance) {
+      char.style[
+        "font-variation-settings"
+      ] = `'XXXX' ${minVariation}, 'YYYY' ${minVariation}`;
+    } else {
+      const variation =
+        minVariation +
+        ((maxDistance - distance) * (maxVariation - minVariation)) /
+          maxDistance;
+      char.style[
+        "font-variation-settings"
+      ] = `'XXXX' ${variation}, 'YYYY' ${variation}`;
+    }
+  });
+};
+
+document.ontouchmove = touchMove;
+
 // hovering__container end
 
 // strip start
