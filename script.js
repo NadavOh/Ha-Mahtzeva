@@ -229,49 +229,49 @@ document.ontouchmove = touchMove;
 // hovering__container end
 
 // strip start
-// const updateVariationSettings = () => {
-//   const chars = document.querySelectorAll("section .group .row span");
+const updateVariationSettings = () => {
+  const chars = document.querySelectorAll("section .group .row span");
 
-//   const maxVariation = 45;
-//   const minVariation = -45;
-//   const screenWidth = window.innerWidth;
+  const maxVariation = 45;
+  const minVariation = -45;
+  const screenWidth = window.innerWidth;
 
-//   [...chars].forEach((char) => {
-//     const position = char.getBoundingClientRect();
-//     const distanceToScreenCenter =
-//       position.left + position.width / 2 - screenWidth / 2;
+  [...chars].forEach((char) => {
+    const position = char.getBoundingClientRect();
+    const distanceToScreenCenter =
+      position.left + position.width / 2 - screenWidth / 2;
 
-//     let variation;
-//     if (distanceToScreenCenter < 0) {
-//       variation =
-//         (Math.abs(distanceToScreenCenter) / (screenWidth / 2)) * minVariation;
-//     } else {
-//       variation = (distanceToScreenCenter / (screenWidth / 2)) * maxVariation;
-//     }
+    let variation;
+    if (distanceToScreenCenter < 0) {
+      variation =
+        (Math.abs(distanceToScreenCenter) / (screenWidth / 2)) * minVariation;
+    } else {
+      variation = (distanceToScreenCenter / (screenWidth / 2)) * maxVariation;
+    }
 
-//     char.style.setProperty("font-variation-settings", `'XXXX' ${variation}`);
-//   });
-// };
+    char.style.setProperty("font-variation-settings", `'XXXX' ${variation}`);
+  });
+};
 
-// const animateVariationSettings = () => {
-//   let animationFrame;
+const animateVariationSettings = () => {
+  let animationFrame;
 
-//   const animate = () => {
-//     updateVariationSettings();
+  const animate = () => {
+    updateVariationSettings();
 
-//     // Schedule next frame
-//     animationFrame = requestAnimationFrame(animate);
-//   };
+    // Schedule next frame
+    animationFrame = requestAnimationFrame(animate);
+  };
 
-//   animate();
+  animate();
 
-//   window.addEventListener("resize", () => {
-//     cancelAnimationFrame(animationFrame);
-//     animate();
-//   });
-// };
+  window.addEventListener("resize", () => {
+    cancelAnimationFrame(animationFrame);
+    animate();
+  });
+};
 
-// animateVariationSettings();
+animateVariationSettings();
 
 // strip end
 
@@ -376,9 +376,15 @@ let isFlipped = false; // Variable to track the flip state
 
 let html = "";
 for (let i = 0; i < text.length; i++) {
-  const angleX = isFlipped ? -45 + (i * (90 / (text.length - 1))) : 45 - (i * (90 / (text.length - 1)));
-  const angleY = isFlipped ? -45 + (i * (90 / (text.length - 1))) : 45 - (i * (90 / (text.length - 1)));
-  html += `<span class="letter" style="font-variation-settings: 'XXXX' ${angleX.toFixed(3)}, 'YYYY' ${angleY.toFixed(3)};">${text[i]}</span>`;
+  const angleX = isFlipped
+    ? -45 + i * (90 / (text.length - 1))
+    : 45 - i * (90 / (text.length - 1));
+  const angleY = isFlipped
+    ? -45 + i * (90 / (text.length - 1))
+    : 45 - i * (90 / (text.length - 1));
+  html += `<span class="letter" style="font-variation-settings: 'XXXX' ${angleX.toFixed(
+    3
+  )}, 'YYYY' ${angleY.toFixed(3)};">${text[i]}</span>`;
 }
 
 textContainer.innerHTML = html;
@@ -388,9 +394,14 @@ textContainer.addEventListener("click", function () {
 
   const letters = textContainer.getElementsByClassName("letter");
   for (let i = 0; i < letters.length; i++) {
-    const angleX = isFlipped ? -45 + (i * (90 / (text.length - 1))) : 45 - (i * (90 / (text.length - 1)));
-    const angleY = isFlipped ? -45 + (i * (90 / (text.length - 1))) : 45 - (i * (90 / (text.length - 1)));
-    letters[i].style.fontVariationSettings = `'XXXX' ${angleX.toFixed(3)}, 'YYYY' ${angleY.toFixed(3)}`;
+    const angleX = isFlipped
+      ? -45 + i * (90 / (text.length - 1))
+      : 45 - i * (90 / (text.length - 1));
+    const angleY = isFlipped
+      ? -45 + i * (90 / (text.length - 1))
+      : 45 - i * (90 / (text.length - 1));
+    letters[i].style.fontVariationSettings = `'XXXX' ${angleX.toFixed(
+      3
+    )}, 'YYYY' ${angleY.toFixed(3)}`;
   }
 });
-

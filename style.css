@@ -61,7 +61,6 @@ body.switch-fonts {
   background-color: var(--white);
   color: var(--black);
   position: relative;
-  padding-top: 8vh;
   min-height: 100vh;
 }
 
@@ -115,7 +114,7 @@ label {
   display: block;
   border-radius: 5vw;
   position: relative;
-  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 @media (max-width: 1200px) {
@@ -768,7 +767,7 @@ input:checked + label:after {
   width: auto;
 }
 
-ul{
+ul {
   padding-inline-start: 0px;
 }
 
@@ -1068,21 +1067,6 @@ td:hover {
 /* table hover end */
 
 /* Strip start */
-/* #scrolling-strip {
-  position: relative;
-  height: 20vw;
-  overflow: hidden;
-}
-
-.letter {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  font-size: 20vw;
-  white-space: nowrap;
-  font-variation-settings: "XXXX" 0, "YYYY" 0;
-}
-
 @keyframes ticker {
   0% {
     transform: translate3d(25%, 0, 0);
@@ -1095,14 +1079,12 @@ td:hover {
 section {
   text-align: center;
   position: relative;
-  z-index: 1;
   background-color: var(--white);
   color: var(--black);
 }
 
 section .group {
-  width: 100%;
-  min-height: 20vw;
+  height: 30vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1111,25 +1093,28 @@ section .group {
 }
 
 section .group .row {
-  width: 200vw;
+  width: 700vw;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   justify-content: space-around;
   transform: translate3d(25%, 0, 0);
-  white-space: nowrap;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-name: ticker;
-  animation-duration: 30s;
-  animation-direction: reverse;
+  animation-duration: 50s;
+  animation-direction: alternate-reverse;
+  font-size: 15vw;
 }
 
-section .group .row span {
-  font-size: 12vw;
-  transform: translateX(-45px);
-  transition: transform 1s;
-} */
+@media (max-width: 1200px) {
+  section .group {
+    height: 60vw;
+  }
+
+  section .group .row {
+    font-size: 25vw;
+    width: 1000vw;
+  }
+}
 /* Strip end */
 
 /* Credits start */
@@ -1251,21 +1236,24 @@ section .group .row span {
   display: flex;
   justify-content: center;
   margin-top: 10vw;
-  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  width: 50vw;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media (max-width: 1200px) {
   .ot-ot-container {
     margin-top: 20vw;
+    width: 90vw;
   }
 }
 
 .tipa {
-  font-size: clamp(4.75rem, 5vw, 7rem);
-  line-height: clamp(3.3rem, 4.2vw, 6rem);
+  font-size: clamp(4rem, 10vw, 16rem);
+  line-height: clamp(3rem, 8vw, 11rem);
   justify-self: center;
   font-variation-settings: "XXXX" 0, "YYYY" 0;
   cursor: pointer;
   text-align: center;
 }
-
