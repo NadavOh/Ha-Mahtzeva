@@ -38,18 +38,23 @@ body.switch-fonts {
   background: var(--white);
 }
 
-.black__background_S {
+.black__background {
   background-color: var(--black);
   color: var(--white);
   padding: 0%;
-  top: 0;
 }
 
-.black__background1 {
+.black__backgroundtop {
   background-color: var(--black);
   color: var(--white);
   padding: 0%;
   padding-top: 35vh;
+}
+
+@media (max-width: 1200px) {
+  .black__backgroundtop {
+    padding-top: 30vh;
+  }
 }
 
 .white__background {
@@ -61,11 +66,6 @@ body.switch-fonts {
 }
 
 .white__background ::selection {
-  color: var(--white);
-  background: var(--black);
-}
-
-.white__backgroundend ::selection {
   color: var(--white);
   background: var(--black);
 }
@@ -203,8 +203,6 @@ input:checked + label:after {
   line-height: clamp(1.75rem, 2vw, 3.8rem);
   overflow-wrap: break-word;
   letter-spacing: 0.02vw;
-  position: sticky;
-  top: 0;
 }
 
 @media (max-width: 1200px) {
@@ -216,6 +214,7 @@ input:checked + label:after {
   .p-info {
     font-size: 4vh;
     line-height: 3.6vh;
+    position: static;
   }
 
   .info__container2 {
@@ -1142,6 +1141,11 @@ section .group .row span {
   align-items: center;
   justify-content: center;
   padding: auto;
+}
+
+.white__backgroundend ::selection {
+  color: var(--white);
+  background: var(--black);
 }
 
 @media (max-width: 1200px) {
