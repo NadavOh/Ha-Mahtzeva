@@ -224,6 +224,7 @@ input:checked + label:after {
     width: 88vw;
     margin-left: 0%;
   }
+
 }
 
 .p-info-inline {
@@ -1168,7 +1169,8 @@ section .group .row {
 
 @media (max-width: 1200px) {
   section .group {
-    height: 60vw;
+    height: 45vw;
+    margin-top: 5vw;
   }
 
   section .group .row {
