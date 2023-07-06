@@ -33,6 +33,10 @@ body.switch-fonts {
   --font-family-secondary: "Ha-MahtzevaVF";
 }
 
+br {
+  user-select: none;
+}
+
 ::selection {
   color: var(--black);
   background: var(--white);
@@ -658,11 +662,11 @@ input:checked + label:after {
 }
 
 .animation2 {
-  font-size: 6vw;
+  font-size: 7vw;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 8vw;
+  margin-top: 10vw;
 }
 
 .animation2 br {
@@ -756,15 +760,18 @@ input:checked + label:after {
 /* hover animation*/
 .hovering__container {
   background-color: transparent;
-  align-items: center;
   margin: auto;
   margin-bottom: 10vw;
   text-align: center;
   padding: 0% !important;
   touch-action: none;
   display: flex;
-  justify-content: center;
-  width: auto;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 88vw;
+  overflow: hidden;
+  height: 30vw;
+  align-items: flex-start;
 }
 
 ul {
@@ -784,6 +791,42 @@ a {
   cursor: default;
 }
 
+a > span {
+  cursor: none;
+}
+
+.right1 {
+  /* animation: swapthings 3s infinite both; */
+  width: 20vw;
+  font-size: 50vw;
+  font-family: var(--font-family-secondary);
+  height: 20vw;
+  margin-top: -8vw;
+  font-variation-settings: "XXXX" -45, "YYYY" 0;
+  user-select: none;
+  transition: 1250ms ease-in-out;
+}
+
+.right1:hover {
+  font-variation-settings: "XXXX" 45, "YYYY" 0;
+}
+
+.left1 {
+  /* animation: swapthings2 3s infinite both; */
+  width: 20vw;
+  font-size: 50vw;
+  font-family: var(--font-family-secondary);
+  height: 20vw;
+  margin-top: -8vw;
+  font-variation-settings: "XXXX" 45, "YYYY" 0;
+  user-select: none;
+  transition: 1000ms ease-in-out;
+}
+
+.left1:hover {
+  font-variation-settings: "XXXX" -45, "YYYY" 0;
+}
+
 @media (max-width: 1200px) {
   a {
     font-size: clamp(1.9rem, 2.15vw, 4rem);
@@ -792,11 +835,26 @@ a {
 
   .hovering__container {
     margin-bottom: 15vw;
+    width: auto;
+    overflow: hidden;
+    height: auto;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
-}
 
-a > span {
-  cursor: none;
+  .right1 {
+    display: none;
+  }
+  
+  .left1 {
+    height: 100vw;
+    font-size: 100vw;
+    width: auto;
+    margin-top: -10vw;
+    margin-bottom: -40vw;
+  }
 }
 /* hover animation END*/
 
@@ -1023,6 +1081,8 @@ td:hover {
 
 #content {
   font-size: clamp(20rem, 30vw, 35rem);
+  width: 100%;
+  text-align: center; 
   color: var(--white);
   animation: table-animation 8000ms infinite both;
 }
@@ -1102,7 +1162,8 @@ section .group .row {
   animation-name: ticker;
   animation-duration: 50s;
   animation-direction: alternate-reverse;
-  font-size: 15vw;
+  font-size: 17.5vw;
+  text-align: center;
 }
 
 @media (max-width: 1200px) {
