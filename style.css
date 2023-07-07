@@ -260,7 +260,7 @@ input:checked + label:after {
 /* p-info end */
 
 /* Otiot start */
-.Otiot__container {
+/* .Otiot__container {
   margin-right: 6vw;
   margin-bottom: 8vh;
 }
@@ -271,7 +271,7 @@ input:checked + label:after {
   font-variation-settings: "XXXX" 0, "YYYY" 0;
   text-align: rtl;
   letter-spacing: 0.35vw;
-}
+} */
 /* Otiot end */
 
 /* animation-asterisk start */
@@ -461,12 +461,14 @@ input:checked + label:after {
 /* alice start */
 .alice__container {
   width: auto;
-  margin-right: 6vw;
+  margin-right: 50vw;
   margin-left: 6vw;
+  padding-right: 0.5vw;
+  -webkit-box-reflect: right;
 }
 
 .alice-p {
-  font-size: clamp(2.5rem, 6vw, 8rem);
+  font-size: clamp(2.5rem, 4vw, 6rem);
   line-height: clamp(2.8rem, 4.3vw, 6.5rem);
 }
 
@@ -478,16 +480,6 @@ input:checked + label:after {
 
 .names br {
   display: none;
-}
-
-@media (max-width: 1200px) {
-  .alice__container {
-    margin-left: 0vw;
-  }
-
-  .names br {
-    display: flex;
-  }
 }
 
 .zahal {
@@ -523,6 +515,19 @@ input:checked + label:after {
 
   100% {
     font-variation-settings: "XXXX" 0, "YYYY" 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .alice__container {
+    margin-left: 0vw;
+    margin-right: 6vw;
+    padding-right: 0vw;
+    -webkit-box-reflect: unset;
+  }
+
+  .names br {
+    display: flex;
   }
 }
 /* alice end */
@@ -797,7 +802,6 @@ a > span {
 }
 
 .right1 {
-  /* animation: swapthings 3s infinite both; */
   width: 20vw;
   font-size: 50vw;
   font-family: var(--font-family-secondary);
@@ -813,7 +817,6 @@ a > span {
 }
 
 .left1 {
-  /* animation: swapthings2 3s infinite both; */
   width: 20vw;
   font-size: 50vw;
   font-family: var(--font-family-secondary);
@@ -837,12 +840,8 @@ a > span {
   .hovering__container {
     margin-bottom: 15vw;
     width: auto;
-    overflow: hidden;
     height: auto;
-    align-items: flex-start;
     justify-content: center;
-    flex-direction: column;
-    align-items: center;
   }
 
   .right1 {
@@ -850,11 +849,7 @@ a > span {
   }
   
   .left1 {
-    height: 100vw;
-    font-size: 100vw;
-    width: auto;
-    margin-top: -10vw;
-    margin-bottom: -40vw;
+    display: none;
   }
 }
 /* hover animation END*/
@@ -1156,7 +1151,7 @@ section .group {
 section .group .row {
   width: 700vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   transform: translate3d(25%, 0, 0);
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -1292,7 +1287,6 @@ section .group .row {
   animation: three-d 8000ms infinite both;
   animation-delay: var(--delay);
 }
-
 /* Credits end */
 
 .ot-ot-container {
