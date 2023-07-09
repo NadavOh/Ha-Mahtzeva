@@ -259,21 +259,6 @@ input:checked + label:after {
 }
 /* p-info end */
 
-/* Otiot start */
-/* .Otiot__container {
-  margin-right: 6vw;
-  margin-bottom: 8vh;
-}
-
-.otiot {
-  font-size: clamp(4.8rem, 7.5vw, 12rem);
-  line-height: clamp(3.8rem, 6vw, 9rem);
-  font-variation-settings: "XXXX" 0, "YYYY" 0;
-  text-align: rtl;
-  letter-spacing: 0.35vw;
-} */
-/* Otiot end */
-
 /* animation-asterisk start */
 .container__XY {
   display: flex;
@@ -660,6 +645,55 @@ input:checked + label:after {
 }
 /* Transform Container End */
 
+#piano {
+  width: 75vw;
+  margin-top: 10vw;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-evenly;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.piano-key {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  font-size: 10vw;
+  font-variation-settings: "XXXX" 45, "YYYY" 45;
+  transition: font-variation-settings 0.3s;
+}
+
+@media (max-width: 1200px) {
+  #piano {
+  flex-direction: column;
+  margin-top: 15vw;
+  }
+  
+  .piano-key {
+    font-size: 25vw;
+    line-height: 18vw;
+    height: 18vw;
+  }
+}
+
+@media (max-width: 1200px) and (orientation: landscape) {
+  #piano {
+    flex-direction: row;
+    margin-top: 15vw;
+    width: 88vw;
+  }
+
+  .piano-key {
+    font-size: 12vw;
+    line-height: 12vw;
+    height: 12vw;
+  }
+}
+
+.piano-key.variation-change {
+  font-variation-settings: "XXXX" 45, "YYYY" 25;
+}
 /* Animation nadned*/
 .nadned__container {
   display: flex;
