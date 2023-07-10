@@ -57,7 +57,7 @@ br {
 
 @media (max-width: 1200px) {
   .black__backgroundtop {
-    padding-top: 30vh;
+    padding-top: 32vh;
   }
 }
 
@@ -89,7 +89,7 @@ br {
 @media (max-width: 1200px) {
   #sticky-container {
     height: 7vh;
-    margin-bottom: 3vh;
+    margin-bottom: 1vh;
     padding-top: 2%;
     padding-bottom: 1%;
     justify-content: space-between;
@@ -198,6 +198,8 @@ input:checked + label:after {
   margin-left: 40%;
   margin-right: 6vw;
   padding-bottom: 12vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .p-info2 {
@@ -206,6 +208,20 @@ input:checked + label:after {
   line-height: clamp(1.75rem, 2vw, 3.8rem);
   overflow-wrap: break-word;
   letter-spacing: 0.02vw;
+}
+
+.p-info2h {
+  font-size: 2.8vw;
+  font-family: var(--font-family-secondary);
+  margin-bottom: -1%;
+}
+
+.p-info2inline {
+  font-family: var(--font-family-secondary);
+}
+
+.p-info2inline br {
+  display: none;
 }
 
 @media (max-width: 1200px) {
@@ -220,11 +236,19 @@ input:checked + label:after {
     position: static;
   }
 
+  .p-info2h {
+    font-size: 5vh;
+    margin-bottom: -5%;
+  }
+
   .info__container2 {
     width: 88vw;
     margin-left: 0%;
   }
 
+  .p-info2inline br {
+    display: flex;
+  }
 }
 
 .p-info-inline {
@@ -235,7 +259,17 @@ input:checked + label:after {
   font-family: "Ha-MahtzevaVF";
 }
 
-.info-three-d {
+/* .info-three-d {
+} */
+
+.info-three-d br {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .info-three-d br {
+    display: flex;
+  }
 }
 
 .info-three-d .char {
@@ -339,24 +373,49 @@ input:checked + label:after {
 /* animation-asterisk end */
 
 /* 9 alef Start*/
+.container__tzirim {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 88vw;
+  margin: auto;
+  margin-bottom: 10vw;
+  margin-top: -7vw;
+}
+
+.p-tzirim {
+  margin: 0;
+  width: 35vw;
+  font-size: clamp(2rem, 2.15vw, 4rem);
+  line-height: clamp(1.75rem, 2vw, 3.8rem);
+  overflow-wrap: break-word;
+  letter-spacing: 0.02vw;
+}
+
 .container__alef {
   width: 45vw;
   height: 45vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  margin: 0 auto;
   z-index: 1;
-  margin-bottom: 7vw;
-  margin-top: -7vw;
 }
 
 @media (max-width: 1200px) {
   .container__alef {
     width: 90vw;
     height: 90vw;
-    margin-bottom: 20vw;
+    margin-bottom: 15vw;
     margin-top: 0vw;
+  }
+
+  .container__tzirim {
+    flex-direction: column;
+  }
+
+  .p-tzirim {
+    width: auto;
   }
 }
 
@@ -448,6 +507,7 @@ input:checked + label:after {
   width: auto;
   margin-right: 50vw;
   margin-left: 6vw;
+  margin-top: 15vw;
   padding-right: 0.5vw;
   -webkit-box-reflect: right;
 }
@@ -674,6 +734,7 @@ input:checked + label:after {
   justify-content: space-evenly;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   user-select: none;
+  margin-bottom: 15vw;
 }
 
 .piano-key {
@@ -787,7 +848,7 @@ input:checked + label:after {
 .sound-container {
   display: flex;
   align-items: center;
-  height: 110vh;
+  height: 105vh;
   margin-bottom: auto;
 }
 
@@ -974,8 +1035,8 @@ a > span {
 }
 
 #text-container {
-  margin: 6vw;
-  margin-bottom: 10vw;
+  margin-left: 6vw;
+  margin-right: 6vw;
   margin-top: 1.5vw;
   height: auto;
   display: flex;
@@ -1004,7 +1065,7 @@ a > span {
 
   #text-container {
     margin-top: 3vw;
-    margin-bottom: 20vw;
+    margin-bottom: 10vw;
   }
 }
 
@@ -1018,6 +1079,13 @@ a > span {
   padding-right: 6vw;
   padding-left: 6vw;
   user-select: none;
+}
+
+.lifamim-left__container {
+  padding-right: 6vw;
+  padding-left: 6vw;
+  user-select: none;
+  margin-bottom: 12vw;
 }
 
 .lifamim {
@@ -1052,7 +1120,7 @@ a > span {
   align-items: center;
   width: 70vw;
   margin: auto;
-  padding-bottom: 15vw;
+  padding-bottom: 18vw;
 }
 
 @media (max-width: 1200px) {
@@ -1060,6 +1128,7 @@ a > span {
     flex-direction: column-reverse;
     height: 130vw;
     width: 90vw;
+    padding-bottom: 30vw;
   }
 }
 
@@ -1162,7 +1231,7 @@ td {
 @media (max-width: 1200px) {
   td {
     font-size: 8vw;
-  }s
+  }
 }
 
 td:hover {
