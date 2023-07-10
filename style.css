@@ -650,7 +650,7 @@ input:checked + label:after {
       transparent calc(100% / 60)
     );
   }
-  
+
   #transform__container::after {
     background-image: repeating-linear-gradient(
       to bottom,
@@ -748,10 +748,10 @@ input:checked + label:after {
 
 @media (max-width: 1200px) {
   #piano {
-  flex-direction: column;
-  margin-top: 15vw;
+    flex-direction: column;
+    margin-top: 15vw;
   }
-  
+
   .piano-key {
     font-size: 22vw;
     line-height: 16vw;
@@ -963,7 +963,7 @@ a > span {
   .right1 {
     display: none;
   }
-  
+
   .left1 {
     display: none;
   }
@@ -1200,8 +1200,8 @@ a > span {
   }
 }
 
-.table-container {
-}
+/* .table-container {
+} */
 
 table {
   border-collapse: collapse;
@@ -1255,7 +1255,7 @@ td:hover {
 #content {
   font-size: clamp(20rem, 30vw, 35rem);
   width: 100%;
-  text-align: center; 
+  text-align: center;
   color: var(--white);
   animation: table-animation 8000ms infinite both;
   z-index: 10;

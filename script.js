@@ -408,13 +408,13 @@ textContainer.addEventListener("click", function () {
 
 // Create an object to map keys to frequencies and variation settings
 const noteMap = {
-  keyC: { frequency: 261.63, variation: 'C', audio: 'sounds/keyC.m4a' },
-  keyD: { frequency: 293.66, variation: 'D', audio: 'sounds/keyD.m4a' },
-  keyE: { frequency: 329.63, variation: 'E', audio: 'sounds/keyE.m4a' },
-  keyF: { frequency: 349.23, variation: 'F', audio: 'sounds/keyF.m4a' },
-  keyG: { frequency: 392.00, variation: 'G', audio: 'sounds/keyG.m4a' },
-  keyA: { frequency: 440.00, variation: 'A', audio: 'sounds/keyA.m4a' },
-  keyB: { frequency: 493.88, variation: 'B', audio: 'sounds/keyB.m4a' }
+  keyC: { frequency: 261.63, variation: "C", audio: "sounds/keyC.m4a" },
+  keyD: { frequency: 293.66, variation: "D", audio: "sounds/keyD.m4a" },
+  keyE: { frequency: 329.63, variation: "E", audio: "sounds/keyE.m4a" },
+  keyF: { frequency: 349.23, variation: "F", audio: "sounds/keyF.m4a" },
+  keyG: { frequency: 392.0, variation: "G", audio: "sounds/keyG.m4a" },
+  keyA: { frequency: 440.0, variation: "A", audio: "sounds/keyA.m4a" },
+  keyB: { frequency: 493.88, variation: "B", audio: "sounds/keyB.m4a" },
 };
 
 // Initialize the Web Audio API context
@@ -431,26 +431,22 @@ async function loadAndPlayPianoNote(freq, variation, audioPath) {
     source.connect(audioContext.destination);
     source.start();
   } catch (error) {
-    console.error('Error loading audio:', error);
+    console.error("Error loading audio:", error);
   }
 
   // Change the font variation setting after playing the note
-  const pianoKey = document.getElementById('key' + variation);
-  pianoKey.classList.add('variation-change');
+  const pianoKey = document.getElementById("key" + variation);
+  pianoKey.classList.add("variation-change");
   setTimeout(() => {
-    pianoKey.classList.remove('variation-change');
+    pianoKey.classList.remove("variation-change");
   }, 250);
 }
 
 // Add click event listeners to each piano key
-const pianoKeys = document.querySelectorAll('.piano-key');
-pianoKeys.forEach(key => {
-  key.addEventListener('click', async () => {
+const pianoKeys = document.querySelectorAll(".piano-key");
+pianoKeys.forEach((key) => {
+  key.addEventListener("click", async () => {
     const { frequency, variation, audio } = noteMap[key.id];
     await loadAndPlayPianoNote(frequency, variation, audio);
   });
 });
-
-
-
-
