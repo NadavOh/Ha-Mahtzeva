@@ -18,7 +18,6 @@
 }
 
 body {
-  /* use css variables for font names for easy switching later on: */
   --font-family-primary: "Ha-MahtzevaVF";
   --font-family-secondary: "Ha-MahtzevaInlineVF";
   margin: 0;
@@ -28,9 +27,13 @@ body {
 }
 
 body.switch-fonts {
-  /* switch mode for toggle */
   --font-family-primary: "Ha-MahtzevaInlineVF";
   --font-family-secondary: "Ha-MahtzevaVF";
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
 }
 
 br {
@@ -218,6 +221,18 @@ input:checked + label:after {
 
 .p-info2inline {
   font-family: var(--font-family-secondary);
+}
+
+.p-info2left {
+  font-variation-settings: "XXXX" -30, "YYYY" 0;
+}
+
+.p-info2right {
+  font-variation-settings: "XXXX" 30, "YYYY" 0;
+}
+
+.p-info2renne {
+  font-variation-settings: "XXXX" -20, "YYYY" 20;
 }
 
 .p-info2inline br {
@@ -996,6 +1011,10 @@ a > span {
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
   margin: 10px;
+}
+
+.slider::-webkit-appearance {
+  display: none;
 }
 
 @media (max-width: 1200px) {
