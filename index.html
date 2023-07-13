@@ -1,38 +1,249 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Slider Example</title>
-  <!-- <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script> -->
-  <link href="unpkg.com_splitting@1.0.6_dist_splitting-cells.css" rel="stylesheet" type="text/css" />
-  <link href="unpkg.com_splitting@1.0.6_dist_splitting.css" rel="stylesheet" type="text/css" />
-  <script src="./unpkg.com_splitting@1.0.6_dist_splitting.min.js" type="text/javascript"></script>
-  <script src="./cdnjs.cloudflare.com_ajax_libs_gsap_3.9.1_gsap.min.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="slider-container">
-    <div class="slider-item active">
-      <h1 class="font2" data-splitting>אבגד</h1>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Ha-Mahtzeva</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script> -->
+    <link href="unpkg.com_splitting@1.0.6_dist_splitting-cells.css" rel="stylesheet" type="text/css" />
+    <link href="unpkg.com_splitting@1.0.6_dist_splitting.css" rel="stylesheet" type="text/css" />
+    <script src="./unpkg.com_splitting@1.0.6_dist_splitting.min.js" type="text/javascript"></script>
+    <script src="./cdnjs.cloudflare.com_ajax_libs_gsap_3.9.1_gsap.min.js" type="text/javascript"></script>
+    <link rel="icon" href="Mem --white.svg">
+  </head>
+  <body>
+  <div class="black__backgroundtop">
+
+    <div id="sticky-container">
+      <div id="headline" class="headline" onclick="scrollToTop()">המחצבה</div>
+      <input type="checkbox" id="switch" onclick="toggleFont()" /> 
+      <label for="switch"></label>
+    </div> 
+
+    <div class="black__background">      
+      <div id="scroll-container">
+        <div class="info__container">
+          <p class="p-info">
+            <span class="p-info-reg">המחצבה </span> <span class="p-info-inline">והמחצבה חלול,</span> משפחת גופנים עבריים דינמיים. גופנים אלו עוצבו בהשראת אותיות האבן החצובות באנדרטת מצודת כ״ח. האנדרטה תוכננה במקור ע״י זוג האדריכלים ביטוש ואיקה קומפורטי בשנת 1957. אותיות אלו בעלות מבנה סנס סריפי, גיאומטרי וחד עם ניחוח מקומי ונוסטלגי.
+          </p>
+        </div>
+      </div>
+      <div class="white__background">
+
+        <section>
+          <div class="group">
+            <div class="row">
+              <span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span>
+              <span>א</span><span>ב</span><span>ג</span><span>ד</span><span>ה</span><span>ו</span><span>ז</span><span>ח</span><span>ט</span><span>י</span><span>כ</span>
+              <span>ל</span><span>מ</span><span>נ</span><span>ס</span><span>ע</span><span>פ</span><span>צ</span><span>ק</span><span>ר</span><span>ש</span><span>ת</span>
+              <span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span>
+            </div>
+          </div>
+        </section>
+
+        <div class="info__container2">
+          <span class="p-info2h">אותיות וטכנולוגיה</span><br>
+          <p class="p-info2">
+            עוד מימי הכתב הפרוטו־כנעני, אב הכתבים המודרנים, ועד עצם היום הזה, הושפע עיצוב האותיות מהכלים ומהטכנולוגיות שהיו זמינים לאדם באותה העת: סיתות וחציבה, קולמוס, ציפורן, דפוס בלט, מכונת כתיבה ועוד. הטכנולוגיה של הגופנים הדינמיים (ואריבל פונט), מאפשרת למעצב לייצר קובץ גופן בודד עם משקלי ביניים מרובים. משקלים אלו נעים על צירים, אותם קובע המעצב, דבר המניב מנעד תנועה רחב בתוך הגופן. כך אנו מקבלים זוויות חדשות ומפתיעות של האות וצורתה.<br>
+            <br> עיצוב אותיות ׳המחצבה׳ מושפע מהטכנולוגיה של הגופנים הדינמיים. קצוות המשקלים הן נטיית האותיות על ציר Y וציר X, בין 45 ל 45- מעלות. כך, מקבל הביטוי ׳משקל נטוי׳ (<span class="p-info2renne">איטליק</span>) משמעות חדשה, דהיינו, האות יכולה להיות נטויה לכיוונים רבים במרחב, ובתנועה נחשף שלד האות. טקסט זה נכתב במשקל – X0 Y0. אותיות האבן החצובות באנדרטת מצודת כ״ח, וכך גם אותיות הגופן הן
+            <span class="info-three-d" data-splitting><br>תלת־מימדיות.</span>
+          </p>
+        </div>
+      </div>
+      
+      <div class="container__XY">
+        <span class="animation-Y">Y</span><span class="animation-X">X</span>
+      </div>
+
+      <div class="container__tzirim">
+        <div class="container__alef">
+          <div class="cell cell-1">א</div>
+          <div class="cell cell-2">א</div>
+          <div class="cell cell-3">א</div>
+          <div class="cell cell-4">א</div>
+          <div class="cell cell-5">א</div>
+          <div class="cell cell-6">א</div>
+          <div class="cell cell-7">א</div>
+          <div class="cell cell-8">א</div>
+          <div class="cell cell-9">א</div> 
+        </div>
+          <p class="p-tzirim">
+            <span class="p-info2inline">מערכת הצירים הקרטזית<br></span> היא מערכת צירים שהגה המתמטיקאי והפילוסוף הצרפתי <span class="p-info2renne">רנה דקארט</span> בשנת 1637, כדרך להצגה מדויקת של מיקום נקודות במישור ובמרחב התלת־מימדי.
+            <br><br>
+            הציר <span class="p-info2left">השמאלי</span> מייצג את הציר השלילי והציר <span class="p-info2right">הימני</span> מייצג את הצד החיובי. כך למשל הספרה 1 נמצאת בציר הימני והספרה 1- נמצאת בציר השמאלי. כיוון הצירים החיובי והשלילי נעשו באופן שרירותי, ובאותה מידה עשויים להיות נכונים גם אם הופכים אותם.
+          </p>
+      </div>
+
+      <div id="transform__container">
+        <div id="title"><span>ע</span></div>
+        <span class="label-t label-t--top">Y45</span>
+        <span class="label-t label-t--bottom">Y-45</span>
+        <span class="label-t label-t--left">X-45</span>
+        <span class="label-t label-t--right">X45</span>
+      </div>
+
+      <div id="transform__digits__container">
+        <transform__digits class="axis-position" id="axis-y-position">Y0</transform__digits>
+        </br>
+        <transform__digits class="axis-position" id="axis-x-position">X0</transform__digits>
+      </div>
+
+      <div class="alice__container">
+        <div class="alice-p">
+          <span class="names">הזחל:<br></span>  <span class="zahal">צד אחד יגביה אותך</span><br>
+          <span class="names">אליס:<br></span>  <span class="alice">צד אחד של מה?</span><br>
+          <span class="names">הזחל:<br></span>  <span class="zahal">והצד השני ינמיך אותך</span><br>
+          <span class="names">אליס:<br></span>  <span class="alice">הצד השני של מה?</span><br>
+        </div>
+      </div>
+
+      <div class="ot-ot-container">
+        <div class="tipa" id="tipaContainer">
+          אין הטיפה חוצבת בסלע מכח עוצמתה אלא מכח התמדתה
+        </div>
+      </div>
+
+      <div class="Nadned">
+        <div class= "animation2">
+          <span class="right">וזה לא כזה עמוק,</span> <br>
+          <span class="left">לא לא לא</span> <br>
+        </div>  
+      </div>
+
+      <div class="hovering__container">
+        <span class="right1">*</span>
+        <nav>
+          <ul>
+              <a href="#home" data-splitting>
+                תפיסת עומק או ראיית עומק,<br>
+                היא היכולת לראות את הנפח <br>
+                 התלת־מימדי של עצמים,<br>
+                את הפריסה שלהם במרחב <br>
+                ואת המיקום שלהם ביחס<br>
+                לצופה ולעצמים אחרים. <br>
+                היא מתאפשרת בעקבות<br>
+                מנגנון העיבוד של מערכת <br>
+                הראייה במוח, שיכול להפוך<br>
+                 את התמונה הדו־מימדית <br>
+                המתקבלת על הרשתית<br>
+                לתמונה תלת־מימדית.
+              </a>
+          </ul>
+        </nav>
+        <span class="left1">*</span>
+      </div>
+
+      <div class="lifamim__container">
+        <div class="lifamim">
+          לפעמים אני למעלה<br>
+          וטוב לי וטוב לי נשבע<br>
+        </div>
+      </div>
+
+      <div class="lifamim-left__container">
+        <div class="lifamim-left">
+          לפעמים אני למטה<br>
+          וגם זה סבבה נשבע<br>
+        </div>
+      </div>
+
+      <div id="piano">
+        <div class="piano-key" id="keyC">דו</div>
+        <div class="piano-key" id="keyD">רה</div>
+        <div class="piano-key" id="keyE">מי</div>
+        <div class="piano-key" id="keyF">פה</div>
+        <div class="piano-key" id="keyG">סול</div>
+        <div class="piano-key" id="keyA">לה</div>
+        <div class="piano-key" id="keyB">סי</div>
+      </div>
+
+      <!-- Slider -->
+
+      <div class="slidecontainer">
+        <div class="slider-label__text slider__label">Y</div>
+        <input type="range" min="-45" max="45" value="0" class="slider" id="slider-YYYY">
+        <div class="slider-label__value slider__label" id="slider-YYYY__value"></div>
+      </div>
+      
+      <div class="slidecontainer">
+        <div class="slider-label__text slider__label">X</div>
+        <input type="range" min="-45" max="45" value="0" class="slider" id="slider-XXXX">
+        <div class="slider-label__value slider__label" id="slider-XXXX__value"></div>
+      </div>
+      
+      <!-- Text -->
+      <div id="text-container">
+        <input id="input-text__id" class="input__text" placeholder="פה מקלידים" maxlength="30"></input>
+      </div>
+
+      <div class="sound-container">
+        <p class="custom-text" contenteditable>לחצו עלי<br>הקלידו משהו<br>השמיעו קול :)</p>
+      </div>
+
+      <div id="Table-hover__container">
+        <div id="content-container">
+          <div id="content"></div>
+        </div>
+
+        <div class="table-container">
+          <table dir="rtl" class="font-default">
+            <tbody>
+              <tr>
+                <td>א</td><td>ב</td><td>ג</td><td>ד</td><td>ה</td><td>ו</td><td>ז</td><td>ח</td><td>ט</td>
+              </tr>
+              <tr>
+                <td>י</td><td>כ</td><td>ך</td><td>ל</td><td>מ</td><td>ם</td><td>נ</td><td>ן</td><td>ס</td>
+              </tr>
+              <tr>
+                <td>ע</td><td>פ</td><td>ף</td><td>צ</td><td>ץ</td><td>ק</td><td>ר</td><td>ש</td><td>ת</td>
+              </tr>
+              <tr>
+                <td>₪</td><td>?</td><td>!</td><td>״</td><td>׳</td><td>/</td><td>)</td><td>(</td><td>*</td>
+              </tr>
+              <tr>
+                <td>.</td><td>,</td><td>:</td><td>;</td><td>־</td><td>-</td><td>X</td><td>Y</td><td>0</td>
+              </tr>
+              <tr>
+                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="white__backgroundend">
+
+        <div class="credit__container">
+
+          <p class="p-creditscntr">
+            <span class="credits_h" data-splitting>גופן ׳המחצבה׳</span>
+            <br><br>
+            מעצב <span class="credits_slnt">נדב אהד</span>
+            <br>
+            מנחה <span class="credits_slnt">מאיר סדן</span>
+            <br><br>
+            תודה מיוחדת ל<span class="credits_slnt">איתן נכט</span> המדהים על סיוע בבניית הקוד,
+            תודה לחברת <span class="credits_slnt">׳סטרטסיס׳</span> על הדפסת תלת־מימד איכותית של האותיות
+          </p>
+          <div class="credit__container_bezalel">
+          
+            <img id="bezalel_logo" src="LOGO_final-01.jpg"></img>
+
+            <p class="p-creditscntr">
+              <br>
+            הגופן עוצב במסגרת פרויקט הגמר לתואר ראשון, <span class="credits_slnt">במחלקה לתקשורת חזותית</span> בצלאל, אקדמיה לאומנות ועיצוב, ירושלים 2023
+            </p>
+
+        </div>
+        </div>
+      </div>
     </div>
-    <div class="slider-item">
-      <h1 class="font5" data-splitting>יום אסל</h1>
-    </div>
-    <div class="slider-item">
-      <h1 class="font3" data-splitting>קשב וריכוז</h1>
-    </div>
-    <div class="slider-item">
-      <h1 class="font4">קצב וריקוד</h1>
-    </div>
-    <div class="slider-item">
-      <h1 class="font1" data-splitting>שלום</h1>
-    </div>
-    <div class="slider-item">
-      <h1 class="font6" data-splitting>מאניה דיפרסיה</h1>
-    </div>
-  </div>
-  
-  <script src="script.js"></script>
-</body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="./script.js" type="text/javascript"></script>
+
+
+  </body>
 </html>
