@@ -1588,6 +1588,11 @@ section .group .row {
     margin-top: 20vw;
     width: 90vw;
   }
+
+  .credits_h {
+    display: none;
+    height: 0%;
+  }
 }
 
 .tipa {
