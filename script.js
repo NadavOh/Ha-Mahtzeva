@@ -7,6 +7,20 @@ function scrollToTop() {
   });
 }
 
+$(document).ready(function () {
+  // When the scroll arrow is clicked
+  $(".scroll-arrow").on("click", function () {
+    // Calculate the offset to scroll to (5vh from the top)
+    var offsetToScroll = $(window).height() * 0.9;
+
+    // Scroll to the specified offset smoothly
+    window.scrollTo({
+      top: offsetToScroll,
+      behavior: "smooth",
+    });
+  });
+});
+
 Splitting();
 
 // scroll start
@@ -450,3 +464,27 @@ pianoKeys.forEach((key) => {
     await loadAndPlayPianoNote(frequency, variation, audio);
   });
 });
+
+function detectColorScheme() {
+  // Check if the user's color scheme is set to dark
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    changeFavicon("Mem --white.svg");
+  } else {
+    changeFavicon("Mem --black.svg");
+  }
+}
+
+function changeFavicon(newFavicon) {
+  const link = document.querySelector("link[rel~='icon']");
+  if (link) {
+    link.href = newFavicon;
+  }
+}
+
+// Call the detectColorScheme function once when the page loads
+detectColorScheme();
+
+// Listen for changes in the user's color scheme preference and update the favicon accordingly
+window
+  .matchMedia("(prefers-color-scheme: dark)")
+  .addEventListener("change", detectColorScheme);
