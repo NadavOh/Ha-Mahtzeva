@@ -118,6 +118,7 @@ br {
   text-align: left;
   animation: arrow 3000ms infinite both;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  font-family: var(--font-family-primary);
 }
 
 @keyframes arrow {
@@ -1589,10 +1590,10 @@ section .group .row {
     width: 90vw;
   }
 
-  .credits_h {
+  /* .credits_h {
     display: none;
     height: 0%;
-  }
+  } */
 }
 
 .tipa {
