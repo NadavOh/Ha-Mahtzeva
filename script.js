@@ -21,6 +21,20 @@ $(document).ready(function () {
   });
 });
 
+$(document).ready(function () {
+  // When the scroll arrow is clicked
+  $(".scroll-arrow-bottom").on("click", function () {
+    // Calculate the offset to scroll to (5vh from the top)
+    var offsetToScroll = 0;
+
+    // Scroll to the specified offset smoothly
+    window.scrollTo({
+      top: offsetToScroll,
+      behavior: "smooth",
+    });
+  });
+});
+
 Splitting();
 
 // scroll start
